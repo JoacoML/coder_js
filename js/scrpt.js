@@ -1,34 +1,51 @@
 // Nombre del Usuario
-let nombre=prompt("escribe tu usuario");
-if(nombre){
-  // Saludo
-  let fecha = new Date(); 
-  let hora = fecha.getHours();
-  let buenas = ""
+let usuario = prompt("Escribe tu usuario");
+// Saludo
+let fecha = new Date(); 
+let hora = fecha.getHours();
+let saludo = ""
+let intentos = 5
   
-    if(hora >= 0 && hora < 12){
-      buenas = "Buenos Días";
-    }else if(hora >= 12 && hora < 19){
-      buenas = "Buenas Tardes";
-    }else if(hora >= 19 && hora < 24){
-      buenas = "Buenas Noches";
-    } 
+function saludar(){
+  alert(saludo + " " + usuario);
+}
 
-  alert(buenas + " " + nombre);
-  let pass=0
-  let x=1
-  do {
-      pass = prompt("ingresa tu contraseña");
-      if(x===3){
-          alert("Tercer intento, su cuenta ha sido bloqueada");
-          break;
-      }else{
-          x++
-      }
-  } while (pass !== "12345");
-  if (pass==="12345"){
-  alert("Bienvenido a Javascript")
+if(hora >= 0 && hora < 12){
+  saludo = "Buenos días";
+}else if(hora >= 12 && hora < 19){
+  saludo = "Buenas tardes";
+}else if(hora >= 19 && hora < 24){
+  saludo = "Buenas noches";
+}
+
+saludar();
+
+// Ingresar
+let pass;
+let x = 0;
+do {
+  if (x === 5) {
+    alert("Su cuenta ha sido bloqueada");
+    break;
+  } else {
+    function resta (intentos, x){
+      let intentosRestantes;
+      intentosRestantes = intentos - x;
+      return intentosRestantes
+    } 
+    let intentosRestantes = resta (intentos, x);
+
+    if (x > 0) {
+      alert("Intentos restantes: " + intentosRestantes +"." + " Luego se bloqueara la cuenta!")
+    }
+    x++;
   }
-}else{
-  alert("Vuelva prontoss")
+  pass = prompt("escribe tu contraseña");
+
+} while (pass !== "12345");
+
+if (pass === "12345") {
+  alert("Hola " + usuario + ", " + "bienvenido a Javascript");
+} else {
+  alert("Chau " + usuario + ", vuelva pronto!");
 }
