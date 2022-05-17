@@ -1,3 +1,5 @@
+//////// Log in ////////
+
 // Nombre del Usuario
 let usuario = prompt("Escribe tu usuario");
 // Saludo
@@ -49,3 +51,45 @@ if (pass === "12345") {
 } else {
   alert("Chau " + usuario + ", vuelva pronto!");
 }
+
+//////// Proyectos ////////
+
+// array de stock de proyectos
+const projectStock = [
+  {
+    id:"1",
+    title:"THE OCEAN CLEANUP",
+    type:"Water pollution",
+    risk: "AAA",
+    anualReturn: "15%",
+    inPortfolio: false,
+  }
+];
+
+//Clase de poryectos con funcion constructora
+class project {
+  constructor(id, title, type, risk, anualReturn) {
+    this.id = id;
+    this.title = title.toUpperCase();
+    this.type = type;
+    this.risk = risk;
+    this.anualReturn = anualReturn;
+    this.inPortfolio = false;
+  }
+  addToPortfolio(){
+    this.inPortfolio=true;
+  }
+}
+
+//Pusheo un proyecto al Stock
+projectStock.push(new project("2", "Seabin fundation", "Water pollution", "AAB", "20%"));
+
+//Iteramos el array con for...of para modificarlos a todos
+for(const project of projectStock){
+  console.log(project.title);
+}
+
+// Agregamos a el segundo proyecto al portfolio
+projectStock[1].addToPortfolio();
+
+console.log(projectStock);
