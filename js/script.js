@@ -47,7 +47,7 @@ do {
 } while (pass !== "12345");
 
 if (pass === "12345") {
-  alert("Hola " + usuario + ", " + "bienvenido a Javascript");
+  alert("Hola " + usuario + ", " + "bienvenido a ACTIONS");
 } else {
   alert("Chau " + usuario + ", vuelva pronto!");
 }

@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+*{
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+// Variables
+
+$backColor: black;
+
+// Variables para texto
+
+$lightColor: white;
+$darkColor: black;
+$textXL: 5rem;
+$textM: 3rem;
+$textS: 1.5rem;
+
+// Mixin
+
+@mixin flexContent($direction,$justify,$align){
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+} 
+	// @include flexContent(row, space-around, center);
+
+@mixin text($size, $line-height, $align, $color){
+	font-size: $size;
+	line-height: $line-height;
+	text-align: $align;
+	color: $color;
+}
+	//@include text($textXL, 5rem, center, $darkColor);
+
+
+// Map de colores
+
+$paleta:(
+	'dark':#020301,
+	'darkblue':#1E5096,
+	'blue':#469CE3,
+	'lightblue':rgba(103, 212, 222, 0.9),
+	'superlight': rgba(179, 208, 211, 0.398),
+	'white':#FFFEFF,
+	'black-shw': rgba(2, 12, 43, 0.95),
+	'orange': rgb(225, 179, 93),
+	'fuxia': rgb(194, 13, 230),
+	'green': rgb(14, 169, 14),
+);
+	// map-get($map:$paleta,$key:'white');
+
+
+// Extend placeholder madre
+
+%button{
+	margin: 1rem;
+	padding: 0.3rem;
+	border-color: map-get($map:$paleta,$key:'white');
+	border-radius: 5px;
+	background-color: map-get($map:$paleta,$key:'superlight');
+	text-align: center;
+	font-size: $textS;
+	text-decoration: none;
+	color: $darkColor;
+	transition: all 0.7s;
+	width: 30%;
+	&:hover{
+		transform: scale(1.1);
+		background-color: map-get($map:$paleta,$key:'superlight');
+		color: $lightColor;
+	}
+}

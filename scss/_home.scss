@@ -1,0 +1,84 @@
+// home
+.homeContent{
+    grid-area: homeContent;
+    @include flexContent(column, center, all);
+    margin-top: 11vh;
+    background-color: rgb(83, 111, 142);
+    .sectionHome{
+        .carousel{
+            .carousel-inner{
+                height: 80vh;
+                img{
+                    height: 80vh;
+                    object-fit: cover;
+                }
+                .carousel-caption{
+                    .text-carousel{
+                        @include text(4rem, "", center, $lightColor);
+                        background-color: map-get($map:$paleta,$key:'black-shw');
+                        margin-bottom: 5rem;
+                        padding: 1rem;
+                        border-radius: 20px;
+                        animation-name: textAlpha;
+                        animation-duration: 3s;
+                        @keyframes textAlpha{
+                            from{opacity: 0}
+                            to{opacity: 1;}
+                        }
+                        span{
+                            text-transform: uppercase;
+                        }
+                    }
+                    @media (min-width: 768px){
+                        right: 30%;
+                        left: 30%;
+                    }
+                }
+            }
+        }
+    }
+    .sectionAboutUs{
+        padding-top: 1rem;
+        .aboutUs__text--xl{
+            margin: 1rem;
+            padding: 1rem;
+            @include text(1.7rem, "", center, $lightColor);
+            span{
+                text-transform: uppercase;
+                color: map-get($map:$paleta,$key:'dark');
+            }
+        }
+        .aboutUs__card{
+            border-top: 2px solid lighten(map-get($map:$paleta,$key:'superlight'),40%);
+            padding: 2rem;
+            .aboutUs__title{
+                @include text($textM, auto, left, $lightColor);
+                margin: 1rem;
+            }
+            img{
+                width: 90%;
+            }
+            .aboutUs__text{
+                @include text($textS, 2rem, left, $lightColor);
+                margin: 1rem;
+            }
+            .btn{
+                font-size: 2.5rem;
+                border-radius: 10px;
+            }
+
+            &:nth-child(2){
+                background-color: lighten(map-get($map:$paleta,$key:'superlight'),40%);
+                .aboutUs__title{
+                    @include text($textM, auto, right, $darkColor);
+                }
+                img{
+                    margin-left: 7%;
+                }
+                .aboutUs__text{
+                    @include text($textS, 2rem, right, $darkColor);
+                }
+            }
+        }
+    }
+}

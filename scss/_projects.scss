@@ -1,0 +1,55 @@
+	/*Projects*/
+.projectsContent{
+	grid-area: projectsContent;
+	padding-top: 10rem;
+	background-color: rgb(83, 111, 142);
+	.projects__title--xl{
+		margin: 2rem auto;
+		padding: 1rem 2rem;
+		animation-name: textAlpha;
+		animation-duration: 2s;
+		@include text($textXL, auto, center, $lightColor);
+	}
+	.projects__text--xl{
+		border-top: solid 2px $lightColor;
+		margin: 1rem;
+		padding: 1rem;
+		@include text(1.7rem, "", center, $lightColor);
+		span{
+			text-transform: uppercase;
+			color: map-get($map:$paleta,$key:'darkblue');
+		}
+	}
+	.projects__card{
+		@include flexContent(column, center, center);
+		.card{
+			border: solid 0.3rem white;
+			padding: 0.5rem;
+			box-shadow: 0 0 30px 0 rgb(90, 88, 88);
+			transition: all 0.7s;
+			background-color: map-get($map:$paleta,$key:'darkblue');
+			border-radius: 3%;
+			@include flexContent(column, space-evenly, start);
+			.card__title{
+				@include text($textM, auto, start, $lightColor);
+				margin: 1rem
+			}
+			.card__text{
+				@include text($textS, auto, start, $lightColor);
+				margin: auto 1rem;
+			}
+			.buttonCard{
+				@extend %button;
+				background-color: map-get($map:$paleta,$key:'white');
+			}
+			&:hover{
+				transform: scale(1.02);
+				background-color: map-get($map:$paleta,$key:'dark');
+			}
+		}
+		@media (min-width: 768px){
+			@include flexContent(row, center, center);
+			flex-wrap: wrap;
+		}
+	}
+}

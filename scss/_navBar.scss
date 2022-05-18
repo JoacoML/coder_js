@@ -1,0 +1,25 @@
+// Botonera 
+.botonera {
+	background-color: map-get($map:$paleta, $key:'white');
+	grid-area: botonera;
+	.botonera-desc {
+		max-width: 1140px;
+		margin: auto;
+		/* Logo Home */
+		.botonera__logo {
+			width: 18rem;
+		}
+		/* Lista accesos */
+		.botonera__lista {
+			margin: 0.5rem;
+			padding: 1rem;
+
+			a {
+				font-size: $textS;
+			}
+		}
+		.botonLogIn{
+			font-size: 2rem;
+		}
+	}
+}
