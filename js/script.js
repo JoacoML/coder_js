@@ -118,76 +118,47 @@ function projectsMenu() {
   let stringProjects = "";
 
   for (const project of projectStock) {
-    stringProjects += `${project.id} - ${project.ticker} - ${project.title}. \nPrice: U$$${project.price} APY:${project.anualReturn}\n\n`;
+    stringProjects += `${project.ticker} - ${project.title}. \nPrice: U$$${project.price} APY:${project.anualReturn}\n\n`;
   }
 
-  let idProject = prompt(`Escribe un numero del 0 al 8 para invertir, o escriba 'ESC' para finalizar. \n\n${stringProjects} \n`);
-
-  while (idProject !== "ESC") { 
-    let projectEnCarrito = carrito.find((elemento) => elemento.id == idProject);
+  let projectTicker = prompt(`Escribe un ticker (ej. TOCU) para invertir, o escriba 'ESC' para finalizar. \n\n${stringProjects} \n`);
+  while (projectTicker !== "ESC") { 
+    let projectEnCarrito = carrito.find((elemento) => elemento.ticker == projectTicker);
 
     if (projectEnCarrito) {
-        let index = carrito.findIndex((elemento) => elemento.id === projectEnCarrito.id);
+      let index = carrito.findIndex((elemento) => elemento.ticker == projectEnCarrito.ticker);
 
-        carrito[index].addToPorfolio();
-        carrito[index].actualizarPrecioTotal();
+      carrito[index].addToPorfolio();
+      carrito[index].actualizarPrecioTotal();
+
+      alert(`
+      Otra accion de ${carrito[index].title} 🎉
+      Total: ${carrito[index].cantidad} acciones
+      Precio total: ${carrito[index].totalPrice}
+      APY: ${carrito[index].anualReturn}`);
+      console.table(carrito);
+    } else {
+        let newProject = projectStock.find((elemento) => elemento.ticker == projectTicker);
+        carrito.push(new AddProject(newProject));
+        carrito[carrito.length - 1].actualizarPrecioTotal();
 
         alert(`
-        Otra accion de ${carrito[index].title} 🎉
-        Unidades: ${carrito[index].cantidad}`);
-        console.table(carrito);
-    } else {
-        carrito.push(new AddProject(projectStock[idProject]));
-
-        alert(`Se ha añadido al carrito una accion de ${projectStock[idProject].title} 🎉`);
+        Una accion de ${newProject.title} enviada al carrito 🎉
+        Precio total: U$$${newProject.price}
+        APY: ${newProject.anualReturn}`);
         console.table(carrito);
     }
-    idProject = prompt(`Desea seguir invirtiendo? 🤔
-    Escribe un numero del 0 al 8 para invertir, o escriba 'ESC' para finalizar. \n\n${stringProjects} \n`);
+    projectTicker = prompt(`Desea seguir invirtiendo? 🤔 \nEscribe un ticker (ej. TOCU) para invertir, o escriba 'ESC' para finalizar. \n\n${stringProjects} \n`);
   }
 }
 
-function obtenerPrecioTotal() {
-  let total = carrito.reduce((total, elemento) => {
-      total + elemento.totalPrice, 0;
-  });
-  return total;
+function totalCarrito() {
+  return carrito.reduce((total, elemento) => total + elemento.totalPrice, 0);
 }
 
 // Invocación de funciones
 projectsMenu();
+totalPriceCarrito = totalCarrito();
 
-console.log(projectStock);
-totalPrice = obtenerPrecioTotal();
-
-alert(`El precio total de tu compra es de $${totalPrice}
+alert(`Tu inversion total es de U$$${totalPriceCarrito}
 Gracias! 😄`);
-console.table(carrito);
-
-console.log(totalPrice)
-// // Método sort() aplicado a un array de objetos
-// // Ordenamos el array alfajores por precio de manera ascendente
-// alfajores.sort((a, b) => a.price - b.price);
-// console.log("Array ordenado por precio ascendente");
-// console.table(projectStock);
-
-// // Array ordenado por precio de manera descendente
-// alfajores.sort((a, b) => a.price - b.price);
-// console.log("Array ordenado por precio descendente");
-// console.table(projectStock);
-
-// Método filter()
-// Listamos los alfajores con precio menor a $100
-// let nuevoArray = alfajores.filter((elemento) => elemento.precio < 100);
-// console.log("Nuevo array con precio menor a 100");
-// console.table(nuevoArray);
-
-
-//Iteramos el array con for of
-// for(const project of projectStock){
-//   console.log(project.title);
-// }
-
-// // Agregamos a el segundo proyecto al portfolio
-// projectStock[0].addToPortfolio();
-
