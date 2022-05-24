@@ -142,7 +142,6 @@ let carrito = [];
 
 projectStock.forEach((project) => {
   let card = document.createElement('div')
-
   card.innerHTML = `
   <figure class="card m-3">
     <img src="${project.img}" class="card-img-top" alt="${project.title}">
@@ -150,63 +149,101 @@ projectStock.forEach((project) => {
     <p class="card__text">Price: USD${project.price}</p>
     <p class="card__text">Risk: ${project.risk}</p>
     <p class="card__text">APY: ${project.anualReturn}</p>
-    
-    
-    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-      <button id="agregar${project.id}" type="button" class="btn btn-dark buttonCard"> Buy </button>
-    </div>
+    <div class="btn-group" role="group" aria-label="Invesments kart">
+      <button id="buy${project.id}" type="button" class="btn buttonCard"> Buy </button>
+      </div>
   </figure>`
   conteinerProject.appendChild(card);
+
+  const botonBuy = document.getElementById(`buy${project.id}`)
+  
+  botonBuy.addEventListener('click', () => {
+    addToCart(project.id)
+  })
+
 })
 
-
-
-// Menu de proyectos
-function projectsMenu() {
-  let stringProjects = "";
-
-  for (const project of projectStock) {
-    stringProjects += `${project.ticker} - ${project.title}. \nPrice: U$$${project.price} APY:${project.anualReturn}\n\n`;
-  }
-
-  let projectTicker = prompt(`Escribe un ticker (ej. TOCU) para invertir, o escriba 'ESC' para finalizar. \n\n${stringProjects} \n`);
-  while (projectTicker !== "ESC") { 
-    let projectEnCarrito = carrito.find((elemento) => elemento.ticker == projectTicker);
-
-    if (projectEnCarrito) {
-      let index = carrito.findIndex((elemento) => elemento.ticker == projectEnCarrito.ticker);
-
-      carrito[index].addToPorfolio();
-      carrito[index].actualizarPrecioTotal();
-
-      alert(`
-      Otra accion de ${carrito[index].title} 🎉
-      Total: ${carrito[index].cantidad} acciones
-      Precio total: U$$${carrito[index].totalPrice}
-      APY: ${carrito[index].anualReturn}`);
-      console.table(carrito);
-    } else {
-        let newProject = projectStock.find((elemento) => elemento.ticker == projectTicker);
-        carrito.push(new AddProject(newProject));
-        carrito[carrito.length - 1].actualizarPrecioTotal();
-
-        alert(`
-        Una accion de ${newProject.title} enviada al carrito 🎉
-        Precio total: U$$${newProject.price}
-        APY: ${newProject.anualReturn}`);
-        console.table(carrito);
-    }
-    projectTicker = prompt(`Desea seguir invirtiendo? 🤔 \nEscribe un ticker (ej. TOCU) para invertir, o escriba 'ESC' para finalizar. \n\n${stringProjects} \n`);
-  }
+const addToCart = (projectId) => {
+  let newProject = projectStock.find((project) => project.id === projectId);
+  carrito.push(newProject);
+  carrito[carrito.length - 1].actualizarPrecioTotal();
+  printCart()
+  console.table(carrito)
 }
 
-function totalCarrito() {
-  return carrito.reduce((total, elemento) => total + elemento.totalPrice, 0);
+const printCart = () => {
+  conteinerCarrito.innerHTML = ""
+
+  carrito.forEach((project) => {
+    let card = document.createElement('div')
+    card.innerHTML = `
+    <figure class="card m-3">
+      <h3 class="card__title">${project.title}</h3>
+      <p class="card__text">Stocks n: ${project.cantidad}</p>
+      <p class="card__text">Price: USD${project.totalPrice}</p>
+      <p class="card__text">APY: ${project.anualReturn}</p>
+      <div class="btn-group" role="group" aria-label="Invesments kart">
+        <button id="detele${project.id}" type="button" class="btn buttonCard"> Buy </button>
+      </div>
+    </figure>`
+    conteinerCarrito.appendChild(card);
+  
+    // const botonDelete = document.getElementById(`delete${project.id}`)
+    
+    // botonDelete.addEventListener('click', () => {
+    //   deleteFromCart(project.id)
+    // })
+  
+  })
+
 }
 
-// Invocación de funciones
-projectsMenu();
-totalPriceCarrito = totalCarrito();
+// // Menu de proyectos
+// function projectsMenu() {
+//   let stringProjects = "";
 
-alert(`Tu inversion total es de U$$${totalPriceCarrito}
-Gracias! 😄`);
+//   for (const project of projectStock) {
+//     stringProjects += `${project.ticker} - ${project.title}. \nPrice: U$$${project.price} APY:${project.anualReturn}\n\n`;
+//   }
+
+//   let projectTicker = prompt(`Escribe un ticker (ej. TOCU) para invertir, o escriba 'ESC' para finalizar. \n\n${stringProjects} \n`);
+//   while (projectTicker !== "ESC") { 
+//     let projectEnCarrito = carrito.find((elemento) => elemento.ticker == projectTicker);
+
+//     if (projectEnCarrito) {
+//       let index = carrito.findIndex((elemento) => elemento.ticker == projectEnCarrito.ticker);
+
+//       carrito[index].addToPorfolio();
+//       carrito[index].actualizarPrecioTotal();
+
+//       alert(`
+//       Otra accion de ${carrito[index].title} 🎉
+//       Total: ${carrito[index].cantidad} acciones
+//       Precio total: U$$${carrito[index].totalPrice}
+//       APY: ${carrito[index].anualReturn}`);
+//       console.table(carrito);
+//     } else {
+//         let newProject = projectStock.find((elemento) => elemento.ticker == projectTicker);
+//         carrito.push(new AddProject(newProject));
+//         carrito[carrito.length - 1].actualizarPrecioTotal();
+
+//         alert(`
+//         Una accion de ${newProject.title} enviada al carrito 🎉
+//         Precio total: U$$${newProject.price}
+//         APY: ${newProject.anualReturn}`);
+//         console.table(carrito);
+//     }
+//     projectTicker = prompt(`Desea seguir invirtiendo? 🤔 \nEscribe un ticker (ej. TOCU) para invertir, o escriba 'ESC' para finalizar. \n\n${stringProjects} \n`);
+//   }
+// }
+
+// function totalCarrito() {
+//   return carrito.reduce((total, elemento) => total + elemento.totalPrice, 0);
+// }
+
+// // Invocación de funciones
+// projectsMenu();
+// totalPriceCarrito = totalCarrito();
+
+// alert(`Tu inversion total es de U$$${totalPriceCarrito}
+// Gracias! 😄`);

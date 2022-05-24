@@ -202,11 +202,11 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    border: solid 3px black; }
     .projectsContent .projects__carrito .card {
       border: solid 0.3rem white;
       padding: 0.5rem;
-      box-shadow: 0 0 30px 0 #5a5858;
       transition: all 0.7s;
       background-color: #1E5096;
       border-radius: 3%;
@@ -225,6 +225,8 @@ html {
       .projectsContent .projects__carrito .card:hover {
         transform: scale(1.02);
         background-color: #020301; }
+    .projectsContent .projects__carrito .btn {
+      width: 50%; }
     @media (min-width: 768px) {
       .projectsContent .projects__carrito {
         display: flex;

@@ -58,10 +58,10 @@
 	}
 	.projects__carrito{
 		@include flexContent(column, center, center);
+		border: solid 3px black;
 		.card{
 			border: solid 0.3rem white;
 			padding: 0.5rem;
-			box-shadow: 0 0 30px 0 rgb(90, 88, 88);
 			transition: all 0.7s;
 			background-color: map-get($map:$paleta,$key:'darkblue');
 			border-radius: 3%;
@@ -78,6 +78,9 @@
 				transform: scale(1.02);
 				background-color: map-get($map:$paleta,$key:'dark');
 			}
+		}
+		.btn{
+			width: 50%;
 		}
 		@media (min-width: 768px){
 			@include flexContent(row, center, center);
