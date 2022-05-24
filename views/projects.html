@@ -36,6 +36,7 @@
           </li>
         </ul>
       </div>
+      <button class="btn botonCarrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="../img/carrito.png" alt="logo carrito"></button>
     </div>
   </nav>
   <!-- Projects -->
@@ -43,73 +44,20 @@
     <h1 class="projects__title--xl">Changing the world</h1>
     <p class="projects__text--xl">Products created in a sustaianble way. <span>Innovation</span> like you never imagined.</p>
     <!-- Projects box -->
-    <div class="projects__card">
-      <!-- seccion proyecto 1 -->
-      <figure class="col-md-3 col-sm-9 m-5 card">
-        <img src="../img/project1.jpg" class="card-img-top" alt="The Ocean Cleanup">
-        <h2 class="card__title">The Ocean Cleanup</h2>
-        <p class="card__text">A non-profit organization, based in the Netherlands, developing and scaling technologies to rid the oceans of plastic.</p>
-        <a href="https://theoceancleanup.com/oceans/" target="_blank" class="btn btn-primary buttonCard">See more</a>
-      </figure>
-      <!-- seccion proyecto 2 -->
-      <figure class="col-md-3 col-sm-9 m-5 card">
-        <img src="../img/project2.jpg" class="card-img-top" alt="Seabin project">
-        <h2 class="card__title">Seabin Fundation</h2>
-        <p class="card__text">A dynamic group working towards solutions by harnessing the knowledge and power of the world’s top experts in the field.</p>
-        <a href="https://seabinproject.com/seabin-foundation/projects/" target="_blank" class="btn btn-primary buttonCard">See more</a>
-      </figure>
-      <!-- seccion proyecto 3 -->
-      <figure class="col-md-3 col-sm-9 m-5 card">
-        <img src="../img/project3.jpg" class="card-img-top" alt="Renewable energy">
-        <h2 class="card__title">Renovable Verano</h2>
-        <p class="card__text">A subsidiary of Fotowatio Renewable Ventures that is developing the renewable energy project Parque Eólico Rarinco.</p>
-        <a href="https://www.bnamericas.com/en/company-profile/energia-renovable-verano-tres-spa" target="_blank" class="btn btn-primary buttonCard">See more</a>
-      </figure>
-      <!-- seccion proyecto 4 -->
-      <figure class="col-md-3 col-sm-9 m-5 card">
-        <img src="../img/project4.jpg" class="card-img-top" alt="Micro plastic">
-        <h2 class="card__title">Sonic cleanup</h2>
-        <p class="card__text">Using sound to capture ocean microplastics. A new, filter-free method of separating microplastics from seawater.</p>
-        <a href="https://cosmosmagazine.com/earth/oceans/using-sound-capture-microplastics/" target="_blank" class="btn btn-primary buttonCard">See more</a>
-      </figure>
-      <!-- seccion proyecto 5 -->
-      <figure class="col-md-3 col-sm-9 m-5 card">
-        <img src="../img/project5.jpg" class="card-img-top" alt="Sustainable school">
-        <h2 class="card__title">Eco Schools</h2>
-        <p class="card__text">This global sustainable programe starts in the classroom and expands to the community by engaging the next generation</p>
-        <a href="https://www.ecoschools.global/" target="_blank" class="btn btn-primary buttonCard">See more</a>
-      </figure>
-      <!-- seccion proyecto 6 -->
-      <figure class="col-md-3 col-sm-9 m-5 card">
-        <img src="../img/project6.jpg" class="card-img-top" alt="Glasses with recycled plastic">
-        <h2 class="card__title">Trash Into Treasure</h2>
-        <p class="card__text">The first-ever product to be made with plastic certified from the Great Pacific Garbage Patch.<br>
-          <br>
-        </p>
-        <a href="https://theoceancleanup.com/updates/turning-trash-into-treasure-the-ocean-cleanup-sunglasses/" target="_blank" class="btn btn-primary buttonCard">See more</a>
-      </figure>
-      <!-- seccion proyecto 7 -->
-      <figure class="col-md-3 col-sm-9 m-5 card">
-        <img src="../img/project7.jpg" class="card-img-top" alt="Drones that detect pollution sources">
-        <h2 class="card__title">Dronegenuity</h2>
-        <p class="card__text">The sky is no longer the limit. Drones have become new tools in the fight to preserve the environment.</p>
-        <a href="https://www.dronegenuity.com/about/" target="_blank" class="btn btn-primary buttonCard">See more</a>
-      </figure>
-      <!-- seccion proyecto 8 -->
-      <figure class="col-md-3 col-sm-9 m-5 card">
-        <img src="../img/project8.jpg" class="card-img-top" alt="Sustainable sewage system">
-        <h2 class="card__title">Sustainable Sewage</h2>
-        <p class="card__text">They are energy-efficient, inexpensive, effective and environmentally friendly, and can be applied at any scale.</p>
-        <a href="https://sustainablebuild.co.uk/sustainabledesignsewage/" target="_blank" class="btn btn-primary buttonCard">See more</a>
-      </figure>
-      <!-- seccion proyecto 9 -->
-      <figure class="col-md-3 col-sm-9 m-5 card">
-        <img src="../img/project9.jpg" class="card-img-top" alt="Sustainable construction">
-        <h2 class="card__title">Green Building</h2>
-        <p class="card__text">Focuses on six principles: conserve, reuse, recycle/renew, protect nature, create non-toxic and high quality buildings.</p>
-        <a href="https://www.korteco.com/green-construction/" target="_blank" class="btn btn-primary buttonCard">See more</a>
-      </figure>
+    <div id="conteinerProject" class="projects__card">
     </div>
+    
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div id="conteinerCarrito" class="offcanvas-body projects__carrito">
+      </div>
+
+    </div>
+
   </main>
 
   <!-- footer -->

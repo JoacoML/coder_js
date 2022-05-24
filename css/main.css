@@ -9,7 +9,7 @@
 html {
   font-size: 62.5%; }
 
-.projectsContent .projects__card .card .buttonCard {
+.projectsContent .projects__card .card div .buttonCard, .projectsContent .projects__carrito .card .buttonCard-eliminar {
   margin: 1rem;
   padding: 0.3rem;
   border-color: #FFFEFF;
@@ -21,7 +21,7 @@ html {
   color: black;
   transition: all 0.7s;
   width: 30%; }
-  .projectsContent .projects__card .card .buttonCard:hover {
+  .projectsContent .projects__card .card div .buttonCard:hover, .projectsContent .projects__carrito .card .buttonCard-eliminar:hover {
     transform: scale(1.1);
     background-color: rgba(179, 208, 211, 0.398);
     color: white; }
@@ -43,6 +43,10 @@ html {
         font-size: 1.5rem; }
     .botonera .botonera-desc .botonLogIn {
       font-size: 2rem; }
+    .botonera .botonera-desc .botonCarrito {
+      margin-left: 1rem; }
+      .botonera .botonera-desc .botonCarrito img {
+        width: 80%; }
 
 .homeContent {
   grid-area: homeContent;
@@ -160,6 +164,48 @@ html {
     .projectsContent .projects__card .card {
       border: solid 0.3rem white;
       padding: 0.5rem;
+      transition: all 0.7s;
+      background-color: #1E5096;
+      border-radius: 3%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center; }
+      .projectsContent .projects__card .card .card__title {
+        font-size: 3rem;
+        line-height: auto;
+        text-align: center;
+        color: white;
+        margin: 1rem; }
+      .projectsContent .projects__card .card .card__text {
+        font-size: 1.5rem;
+        line-height: auto;
+        text-align: end;
+        color: white;
+        display: flex;
+        margin: auto 1rem; }
+      .projectsContent .projects__card .card div {
+        width: 70%; }
+        .projectsContent .projects__card .card div .buttonCard {
+          background-color: #FFFEFF; }
+      .projectsContent .projects__card .card:hover {
+        transform: scale(1.02);
+        background-color: #020301; }
+    @media (min-width: 768px) {
+      .projectsContent .projects__card {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; } }
+  .projectsContent .projects__carrito {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .projectsContent .projects__carrito .card {
+      border: solid 0.3rem white;
+      padding: 0.5rem;
       box-shadow: 0 0 30px 0 #5a5858;
       transition: all 0.7s;
       background-color: #1E5096;
@@ -168,25 +214,19 @@ html {
       flex-direction: column;
       justify-content: space-evenly;
       align-items: start; }
-      .projectsContent .projects__card .card .card__title {
+      .projectsContent .projects__carrito .card .card__title {
         font-size: 3rem;
         line-height: auto;
         text-align: start;
         color: white;
         margin: 1rem; }
-      .projectsContent .projects__card .card .card__text {
-        font-size: 1.5rem;
-        line-height: auto;
-        text-align: start;
-        color: white;
-        margin: auto 1rem; }
-      .projectsContent .projects__card .card .buttonCard {
+      .projectsContent .projects__carrito .card .buttonCard-eliminar {
         background-color: #FFFEFF; }
-      .projectsContent .projects__card .card:hover {
+      .projectsContent .projects__carrito .card:hover {
         transform: scale(1.02);
         background-color: #020301; }
     @media (min-width: 768px) {
-      .projectsContent .projects__card {
+      .projectsContent .projects__carrito {
         display: flex;
         flex-direction: row;
         justify-content: center;

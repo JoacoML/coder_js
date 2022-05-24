@@ -25,6 +25,42 @@
 		.card{
 			border: solid 0.3rem white;
 			padding: 0.5rem;
+			transition: all 0.7s;
+			background-color: map-get($map:$paleta,$key:'darkblue');
+			border-radius: 3%;
+			@include flexContent(column, space-evenly, center);
+			.card__title{
+				@include text($textM, auto, center, $lightColor);
+				margin: 1rem
+			}
+			.card__text{
+				@include text($textS, auto, end, $lightColor);
+				display: flex;
+				margin: auto 1rem;
+			}
+			div{
+				width: 70%;
+				.buttonCard{
+					@extend %button;
+					background-color: map-get($map:$paleta,$key:'white');
+				}
+			}
+			
+			&:hover{
+				transform: scale(1.02);
+				background-color: map-get($map:$paleta,$key:'dark');
+			}
+		}
+		@media (min-width: 768px){
+			@include flexContent(row, center, center);
+			flex-wrap: wrap;
+		}
+	}
+	.projects__carrito{
+		@include flexContent(column, center, center);
+		.card{
+			border: solid 0.3rem white;
+			padding: 0.5rem;
 			box-shadow: 0 0 30px 0 rgb(90, 88, 88);
 			transition: all 0.7s;
 			background-color: map-get($map:$paleta,$key:'darkblue');
@@ -34,11 +70,7 @@
 				@include text($textM, auto, start, $lightColor);
 				margin: 1rem
 			}
-			.card__text{
-				@include text($textS, auto, start, $lightColor);
-				margin: auto 1rem;
-			}
-			.buttonCard{
+			.buttonCard-eliminar{
 				@extend %button;
 				background-color: map-get($map:$paleta,$key:'white');
 			}
