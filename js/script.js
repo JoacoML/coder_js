@@ -1,13 +1,16 @@
 //////// Log in ////////
 
-// // Nombre del Usuario
+
+// // Nombre del Usuario y fecha del dia
+
 // let usuario = prompt("Escribe tu usuario");
-// // Saludo
 // let fecha = new Date(); 
 // let hora = fecha.getHours();
 // let saludo = ""
 // let intentos = 5
   
+// // Funcion saludar con condicional de hora
+
 // function saludar(){
 //   alert(saludo + " " + usuario);
 // }
@@ -22,7 +25,7 @@
 
 // saludar();
 
-// // Ingresar pass
+// // Ingresar pass y conteo de 5 intentos de Log
 // let pass;
 // let x = 0;
 // do {
@@ -94,7 +97,7 @@ projectStock.push(new Project("6", "Dronegenuity", "DROG", 200, "AAB", "20%", ".
 projectStock.push(new Project("7", "Sustainable sewage", "ESEW", 300, "AAA", "18%", "../img/project8.jpg"));
 projectStock.push(new Project("8", "Green building", "GREN", 250, "AAB", "20%", "../img/project9.jpg"));
 
-// array de carrtio
+//Carrtio de compras. Variables
 
 const conteinerProject = document.getElementById('conteinerProject')
 const conteinerCarrito = document.getElementById('conteinerCarrito')
@@ -115,30 +118,7 @@ let carrito = [];
 //   actualizarCarrito()
 // })
 
-// clase de proyectos en carrito
-// class AddProject {
-//   constructor(project) {
-//     this.id = project.id;
-//     this.title = project.title;
-//     this.ticker = project.ticker;
-//     this.price = project.price;
-//     this.risk = project.risk;
-//     this.anualReturn = project.anualReturn;
-//     this.img = project.img;
-//     this.cantidad = 1;
-//     this.inPortfolio = true;
-//   }
-//   addToPorfolio() {
-//     this.cantidad++;
-//   }
-//   quitarUnidad() {
-//     this.cantidad--;
-//   }
-//   actualizarPrecioTotal() {
-//     this.totalPrice = this.price * this.cantidad;
-//   }
-// }
-
+// Impresion del Stock
 
 projectStock.forEach((project) => {
   let card = document.createElement('div')
@@ -146,9 +126,9 @@ projectStock.forEach((project) => {
   <figure class="card m-3">
     <img src="${project.img}" class="card-img-top" alt="${project.title}">
     <h2 class="card__title">${project.title}</h2>
-    <p class="card__text">Price: USD${project.price}</p>
     <p class="card__text">Risk: ${project.risk}</p>
     <p class="card__text">APY: ${project.anualReturn}</p>
+    <p class="card__text"><strong>USD ${project.price}</strong></p>
     <div class="btn-group" role="group" aria-label="Invesments kart">
       <button id="buy${project.id}" type="button" class="btn buttonCard"> Buy </button>
       </div>
@@ -163,13 +143,30 @@ projectStock.forEach((project) => {
 
 })
 
+// Funcion argegar al carrito
+
 const addToCart = (projectId) => {
   let newProject = projectStock.find((project) => project.id === projectId);
   carrito.push(newProject);
   carrito[carrito.length - 1].actualizarPrecioTotal();
   printCart()
+  alert(`
+    Una accion de ${newProject.title} enviada al carrito 🎉
+    Precio total: U$$${newProject.price}
+    APY: ${newProject.anualReturn}`
+  );
   console.table(carrito)
 }
+
+// Funcion eliminar del carrito
+const deleteCart = (projectId) => {
+  const item = carrito.find((project) => project.id === projectId);
+  const index = carrito.indexOf(item); 
+  carrito.splice(index,1);
+  printCart()
+} 
+
+// Impresion del carrito
 
 const printCart = () => {
   conteinerCarrito.innerHTML = ""
@@ -180,19 +177,13 @@ const printCart = () => {
     <figure class="card m-3">
       <h3 class="card__title">${project.title}</h3>
       <p class="card__text">Stocks n: ${project.cantidad}</p>
-      <p class="card__text">Price: USD${project.totalPrice}</p>
+      <p class="card__text">Total: <strong>USD${project.totalPrice}</strong></p>
       <p class="card__text">APY: ${project.anualReturn}</p>
       <div class="btn-group" role="group" aria-label="Invesments kart">
-        <button id="detele${project.id}" type="button" class="btn buttonCard"> Buy </button>
+        <button onclick="deleteCart(${project.id})" type="button" class="btn btn-danger buttonCard-eliminar"> Delete </button>
       </div>
     </figure>`
     conteinerCarrito.appendChild(card);
-  
-    // const botonDelete = document.getElementById(`delete${project.id}`)
-    
-    // botonDelete.addEventListener('click', () => {
-    //   deleteFromCart(project.id)
-    // })
   
   })
 

@@ -76,7 +76,7 @@ $paleta:(
 	width: 30%;
 	&:hover{
 		transform: scale(1.1);
-		background-color: map-get($map:$paleta,$key:'superlight');
+		background-color: map-get($map:$paleta,$key:'darkblue');
 		color: $lightColor;
 	}
 }

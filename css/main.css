@@ -9,7 +9,7 @@
 html {
   font-size: 62.5%; }
 
-.projectsContent .projects__card .card div .buttonCard, .projectsContent .projects__carrito .card .buttonCard-eliminar {
+.projectsContent .projects__card .card div .buttonCard {
   margin: 1rem;
   padding: 0.3rem;
   border-color: #FFFEFF;
@@ -21,9 +21,9 @@ html {
   color: black;
   transition: all 0.7s;
   width: 30%; }
-  .projectsContent .projects__card .card div .buttonCard:hover, .projectsContent .projects__carrito .card .buttonCard-eliminar:hover {
+  .projectsContent .projects__card .card div .buttonCard:hover {
     transform: scale(1.1);
-    background-color: rgba(179, 208, 211, 0.398);
+    background-color: #1E5096;
     color: white; }
 
 .botonera {
@@ -200,13 +200,13 @@ html {
         flex-wrap: wrap; } }
   .projectsContent .projects__carrito {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: wrap;
     border: solid 3px black; }
     .projectsContent .projects__carrito .card {
-      border: solid 0.3rem white;
-      padding: 0.5rem;
+      padding: 1rem;
       transition: all 0.7s;
       background-color: #1E5096;
       border-radius: 3%;
@@ -215,18 +215,19 @@ html {
       justify-content: space-evenly;
       align-items: start; }
       .projectsContent .projects__carrito .card .card__title {
-        font-size: 3rem;
+        font-size: 1.5rem;
         line-height: auto;
-        text-align: start;
-        color: white;
-        margin: 1rem; }
+        text-align: center;
+        color: white; }
+      .projectsContent .projects__carrito .card .card__text {
+        font-size: 1.5rem;
+        line-height: auto;
+        text-align: center;
+        color: white; }
       .projectsContent .projects__carrito .card .buttonCard-eliminar {
-        background-color: #FFFEFF; }
-      .projectsContent .projects__carrito .card:hover {
-        transform: scale(1.02);
-        background-color: #020301; }
+        width: 30%; }
     .projectsContent .projects__carrito .btn {
-      width: 50%; }
+      width: 75%; }
     @media (min-width: 768px) {
       .projectsContent .projects__carrito {
         display: flex;
