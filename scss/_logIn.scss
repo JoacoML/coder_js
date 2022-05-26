@@ -1,0 +1,102 @@
+/*Log In*/
+body{
+	background-color: rgb(83, 111, 142);
+	.logInContent{
+		margin-top: 8rem;
+		margin-left: 5%;
+		margin-right: 5%;
+		padding: 1rem;
+		background-color: map-get($map:$paleta,$key:'darkblue');
+		border: solid 3px white;
+		border-radius: 10px;
+		.logIn__logo {
+			margin: 2rem;
+			@include flexContent(row, space-around, center);
+			img{
+				width: 18rem;
+				border-radius: 30px
+			}
+		}
+		.logIn__form{
+			@include text($textS, auto, left, $lightColor);
+			justify-content: space-around;
+			transition: all 0.7s;
+			fieldset{
+				font-size: 1.7rem;
+				label{
+					font-size: 1.7rem;
+					color: map-get($map:$paleta,$key:'lightblue');
+					padding: 2px;
+				}
+				input{
+					font-size: 1.5rem;
+				}
+			}
+			.buttonForm{
+				@extend %button;
+				background-color: whitesmoke;
+				transition: all 0.7s;
+				&:hover{
+					transform: scale(1.1);
+					background-color: map-get($map:$paleta,$key:'orange');
+					color: $lightColor;
+				}
+			}
+		}
+		.logIn__title{
+			@include text(2rem, auto, center, $lightColor);
+			padding-top: 0.5rem;
+			border-top: solid 2px white;
+		}
+		.logIn__icon{
+			@include flexContent(row, center, center);
+			margin: 1rem;
+			img{
+				width: 5vh;
+				margin: 0.5rem 0.5rem;
+				border-radius: 15%;
+				&:hover{
+					background-color: map-get($map:$paleta,$key:'lightblue');
+				}
+			}
+			a{
+				text-decoration: none;
+			}
+		}
+		.logIn__copy{
+			margin-top: 1rem;
+			@include text(1.5rem, auto, center, $lightColor);
+		}
+	}
+	.logIn__quotes{
+		margin-left: 5%;
+		margin-right: 5%;
+		padding: 1rem;
+		.logIn__card{
+			background-color: map-get($map:$paleta,$key:'lightblue');
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			transition: all 0.7s;
+			@include text($textS, auto, center, $darkColor);
+			.card__title{
+				padding: 0.5rem;
+				@include text(2rem, auto, center, map-get($map:$paleta,$key:'white'));
+			}
+			.card__text{
+				padding: 1rem;
+				@include text(1.7rem, auto, start, map-get($map:$paleta,$key:'white'));
+				footer{
+					margin-top: 0.5rem;
+					@include text(1.5rem, auto, start, map-get($map:$paleta,$key:'white'));
+					margin-left: 7rem;
+				}
+			}
+			&:hover{
+				transform: scale(1.01);
+			}
+		}
+	}
+	@media (min-width: 768px){
+		@include flexContent(row, center, center);
+	}
+}

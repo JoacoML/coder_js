@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- SEO -->
+  <title>Log in - Actions</title>
+  <meta name="description" content="Sustainable projects created by entrepreneurs for a better world">
+  <meta name="keywords" content="Your support to an entreprenuer can make you a shareholder on a sustainable business.">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+  <!-- Actions CSS -->
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+  <!-- Form Log in -->
+  <div class="conteiner col-sm-10 col-md-5 logInContent">
+
+    <div>
+      <a class="navbar-brand logIn__logo" href="../index.html ">
+        <img src="../img/home_logo.png" alt="Actions logo">
+      </a>
+    </div>
+    
+    <form action="donate.php" method="post" enctype="" class="row p-3 g-3 needs-validation logIn__form"
+      novalidate>
+      <fieldset class="m-2">
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        </div>
+
+        <div class="mb-3">
+          <label for="name" class="form-label">Password</label>
+          <input type="text" class="form-control" id="pass" placeholder="12345">
+        </div>
+
+        <label for="Region">Region</label>
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="region"
+          id="region">
+          <option selected>Open this select menu</option>
+          <option value="asia">Asia</option>
+          <option value="africa">Africa</option>
+          <option value="europe">Europe</option>
+          <option value="north america">North America</option>
+          <option value="south america">South America</option>
+          <option value="oceania">Oceania</option>
+        </select>
+      </fieldset>
+      <div>
+        <div class="form-check">
+          <input class=" form-check-input" type="checkbox" value="" id="invalidCheck" required>
+          <label class="form-check-label" for="invalidCheck">Agree to terms and conditions
+          </label>
+          <div class="invalid-feedback">
+            You must agree before submitting.</div>
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-primary buttonForm" type="submit">Log in</button>
+      </div>
+    </form>
+    <!-- Titulo Login redes sociales -->
+    <div class="logIn__title">
+      <span>or, Log in with</span>
+    </div>
+
+    <!-- iconos redes sociales -->
+    <div class="logIn__icon">
+      <a href="https://www.instagram.com" target="_blank">
+        <img src="../img/footer_instagram.png" alt=" Instagram Actions">
+      </a>
+      <a href="https://twitter.com" target="_blank">
+        <img src="../img/footer_twitter.png" alt="Twitter Actions">
+      </a>
+      <a href="https://discord.com" target="_blank">
+        <img src="../img/footer_discord.png" alt="Discord Actions">
+      </a>
+      <a href="https://www.linkedin.com/" target="_blank">
+        <img src="../img/footer_linkedIn.png" alt="LinkedIn Actions">
+      </a>
+      <a href="https://www.youtube.com" target="_blank">
+        <img src="../img/footer_youtube.png" alt="Youtube Actions">
+      </a>
+    </div>
+
+    <!-- copy del footer -->
+    <p class="logIn__copy">© Copyright 2022, Actions Inc.</p>
+  
+  </div>
+  <!-- Quotes de companies 1 -->
+  <div class="conteiner col-sm-10 col-md-5 logIn__quotes">
+    <div class="logIn__card">
+      <img src="../img/logIn_quotes1.jpg" class="card-img-top" alt="Beach cleaning record">
+      <h2 class="card__title">Surfers in action</h2>
+      <div class="card__text">
+        <blockquote class="mb-0">
+          <p>After the cleanup campaign in Mexico, we received several calls from companies interested in buying the plastic we recycled.</p>
+          <footer class="blockquote-footer">Carla Mercedes, Environmental surfer <cite title="Source Title">in Times Magazine</cite>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Archivo con funcionalidades de JS -->
+  <script src="../js/logIn.js"></script>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  
+</body>
+
+</html>

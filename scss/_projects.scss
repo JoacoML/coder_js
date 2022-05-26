@@ -39,13 +39,12 @@
 				margin: auto 1rem;
 			}
 			div{
-				width: 70%;
+				width: 60%;
 				.buttonCard{
 					@extend %button;
 					background-color: map-get($map:$paleta,$key:'white');
 				}
 			}
-			
 			&:hover{
 				transform: scale(1.02);
 				background-color: map-get($map:$paleta,$key:'dark');
@@ -64,33 +63,40 @@
 			padding: 1rem;
 			transition: all 0.7s;
 			background-color: map-get($map:$paleta,$key:'darkblue');
-			border-radius: 3%;
+			border-radius: 5px;
 			@include flexContent(row, space-around, center);
 			flex-wrap: wrap;
 			.card__title{
-				width: 75%;
-				@include text($textS, auto, center, $lightColor);
+				@include text(2rem, auto, center, $lightColor);
+				width: 100%;
 			}
 			.card__info{
+				width: 100%;
+				@include flexContent(row, space-evenly, center);
 				.card__text{
+					margin-right: 0.3rem;
 					@include text($textS, auto, start, $lightColor);
 				}
 			}
 			.buttonCard-eliminar{
-				width: 30%;
+				width: 20%;
 			}
 		}
 	}
 	.totalCarrito{
-		margin-left: 5%;
-		@include text(2rem, auto, start, $darkColor);
+		margin-right: 5%;
+		@include text(2rem, auto, end, $darkColor);
 	}
 	.botonCarrito{
 		@include flexContent(column, space-evenly, center);
 		.btn{
 			margin-bottom: 0.3rem;
-			width: 75%;
+			width: 70%;
 			font-size: 1.5rem;
+			&:nth-child(2){
+				width: 60%;
+			}
+			
 		}
 	}
 }

@@ -9,7 +9,7 @@
 html {
   font-size: 62.5%; }
 
-.projectsContent .projects__card .card div .buttonCard {
+body .logInContent .logIn__form .buttonForm, .projectsContent .projects__card .card div .buttonCard, .talkToUsContent .sectionIdeas .sectionIdeas__form .buttonForm, .talkToUsContent .advisorContact .sectionAdvisor__form .buttonForm {
   margin: 1rem;
   padding: 0.3rem;
   border-color: #FFFEFF;
@@ -21,7 +21,7 @@ html {
   color: black;
   transition: all 0.7s;
   width: 30%; }
-  .projectsContent .projects__card .card div .buttonCard:hover {
+  body .logInContent .logIn__form .buttonForm:hover, .projectsContent .projects__card .card div .buttonCard:hover, .talkToUsContent .sectionIdeas .sectionIdeas__form .buttonForm:hover, .talkToUsContent .advisorContact .sectionAdvisor__form .buttonForm:hover {
     transform: scale(1.1);
     background-color: #1E5096;
     color: white; }
@@ -44,9 +44,9 @@ html {
     .botonera .botonera-desc .botonLogIn {
       font-size: 2rem; }
     .botonera .botonera-desc .botonCarrito {
-      margin-left: 1rem; }
+      margin-left: 2rem; }
       .botonera .botonera-desc .botonCarrito img {
-        width: 80%; }
+        width: 60%; }
 
 .homeContent {
   grid-area: homeContent;
@@ -131,6 +131,116 @@ html {
           text-align: right;
           color: black; }
 
+/*Log In*/
+body {
+  background-color: #536f8e; }
+  body .logInContent {
+    margin-top: 8rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 1rem;
+    background-color: #1E5096;
+    border: solid 3px white;
+    border-radius: 10px; }
+    body .logInContent .logIn__logo {
+      margin: 2rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center; }
+      body .logInContent .logIn__logo img {
+        width: 18rem;
+        border-radius: 30px; }
+    body .logInContent .logIn__form {
+      font-size: 1.5rem;
+      line-height: auto;
+      text-align: left;
+      color: white;
+      justify-content: space-around;
+      transition: all 0.7s; }
+      body .logInContent .logIn__form fieldset {
+        font-size: 1.7rem; }
+        body .logInContent .logIn__form fieldset label {
+          font-size: 1.7rem;
+          color: rgba(103, 212, 222, 0.9);
+          padding: 2px; }
+        body .logInContent .logIn__form fieldset input {
+          font-size: 1.5rem; }
+      body .logInContent .logIn__form .buttonForm {
+        background-color: whitesmoke;
+        transition: all 0.7s; }
+        body .logInContent .logIn__form .buttonForm:hover {
+          transform: scale(1.1);
+          background-color: #e1b35d;
+          color: white; }
+    body .logInContent .logIn__title {
+      font-size: 2rem;
+      line-height: auto;
+      text-align: center;
+      color: white;
+      padding-top: 0.5rem;
+      border-top: solid 2px white; }
+    body .logInContent .logIn__icon {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 1rem; }
+      body .logInContent .logIn__icon img {
+        width: 5vh;
+        margin: 0.5rem 0.5rem;
+        border-radius: 15%; }
+        body .logInContent .logIn__icon img:hover {
+          background-color: rgba(103, 212, 222, 0.9); }
+      body .logInContent .logIn__icon a {
+        text-decoration: none; }
+    body .logInContent .logIn__copy {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      line-height: auto;
+      text-align: center;
+      color: white; }
+  body .logIn__quotes {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 1rem; }
+    body .logIn__quotes .logIn__card {
+      background-color: rgba(103, 212, 222, 0.9);
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      transition: all 0.7s;
+      font-size: 1.5rem;
+      line-height: auto;
+      text-align: center;
+      color: black; }
+      body .logIn__quotes .logIn__card .card__title {
+        padding: 0.5rem;
+        font-size: 2rem;
+        line-height: auto;
+        text-align: center;
+        color: #FFFEFF; }
+      body .logIn__quotes .logIn__card .card__text {
+        padding: 1rem;
+        font-size: 1.7rem;
+        line-height: auto;
+        text-align: start;
+        color: #FFFEFF; }
+        body .logIn__quotes .logIn__card .card__text footer {
+          margin-top: 0.5rem;
+          font-size: 1.5rem;
+          line-height: auto;
+          text-align: start;
+          color: #FFFEFF;
+          margin-left: 7rem; }
+      body .logIn__quotes .logIn__card:hover {
+        transform: scale(1.01); }
+  @media (min-width: 768px) {
+    body {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; } }
+
 /*Projects*/
 .projectsContent {
   grid-area: projectsContent;
@@ -185,7 +295,7 @@ html {
         display: flex;
         margin: auto 1rem; }
       .projectsContent .projects__card .card div {
-        width: 70%; }
+        width: 60%; }
         .projectsContent .projects__card .card div .buttonCard {
           background-color: #FFFEFF; }
       .projectsContent .projects__card .card:hover {
@@ -209,30 +319,37 @@ html {
       padding: 1rem;
       transition: all 0.7s;
       background-color: #1E5096;
-      border-radius: 3%;
+      border-radius: 5px;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       align-items: center;
       flex-wrap: wrap; }
       .projectsContent .projects__carrito .card .card__title {
-        width: 75%;
-        font-size: 1.5rem;
+        font-size: 2rem;
         line-height: auto;
         text-align: center;
-        color: white; }
-      .projectsContent .projects__carrito .card .card__info .card__text {
-        font-size: 1.5rem;
-        line-height: auto;
-        text-align: start;
-        color: white; }
+        color: white;
+        width: 100%; }
+      .projectsContent .projects__carrito .card .card__info {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center; }
+        .projectsContent .projects__carrito .card .card__info .card__text {
+          margin-right: 0.3rem;
+          font-size: 1.5rem;
+          line-height: auto;
+          text-align: start;
+          color: white; }
       .projectsContent .projects__carrito .card .buttonCard-eliminar {
-        width: 30%; }
+        width: 20%; }
   .projectsContent .totalCarrito {
-    margin-left: 5%;
+    margin-right: 5%;
     font-size: 2rem;
     line-height: auto;
-    text-align: start;
+    text-align: end;
     color: black; }
   .projectsContent .botonCarrito {
     display: flex;
@@ -241,8 +358,152 @@ html {
     align-items: center; }
     .projectsContent .botonCarrito .btn {
       margin-bottom: 0.3rem;
-      width: 75%;
+      width: 70%;
       font-size: 1.5rem; }
+      .projectsContent .botonCarrito .btn:nth-child(2) {
+        width: 60%; }
+
+/*Talk to us*/
+.talkToUsContent {
+  margin-top: 9rem;
+  background-color: #536f8e; }
+  .talkToUsContent .talkToUs__title--xl {
+    padding: 1rem 3rem;
+    animation-name: textAlpha;
+    animation-duration: 2s;
+    font-size: 5rem;
+    line-height: auto;
+    text-align: center;
+    color: white; }
+  .talkToUsContent .talkToUs__text--xl {
+    font-size: 1.7rem;
+    line-height: auto;
+    text-align: center;
+    color: white;
+    border-top: solid 2px white;
+    margin: 1rem;
+    padding: 1rem; }
+    .talkToUsContent .talkToUs__text--xl span {
+      text-transform: uppercase;
+      color: #1E5096; }
+  .talkToUsContent .sectionIdeas {
+    align-items: center; }
+    .talkToUsContent .sectionIdeas .sectionIdeas__title--xl {
+      animation-name: textAlpha;
+      animation-duration: 2s;
+      font-size: 3rem;
+      line-height: auto;
+      text-align: center;
+      color: white; }
+    .talkToUsContent .sectionIdeas .sectionIdeas__text--xl {
+      font-size: 2rem;
+      line-height: auto;
+      text-align: center;
+      color: white;
+      margin: 1rem;
+      padding: 1rem; }
+      .talkToUsContent .sectionIdeas .sectionIdeas__text--xl span {
+        color: #1E5096; }
+    .talkToUsContent .sectionIdeas .sectionIdeas__form {
+      width: 80%;
+      margin: 3rem;
+      padding: 1rem;
+      background-color: #1E5096;
+      border: solid 3px white;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: all; }
+      .talkToUsContent .sectionIdeas .sectionIdeas__form label {
+        font-size: 1.5rem;
+        line-height: auto;
+        text-align: left;
+        color: white; }
+      .talkToUsContent .sectionIdeas .sectionIdeas__form input {
+        font-size: 1.5rem; }
+      .talkToUsContent .sectionIdeas .sectionIdeas__form .buttonForm {
+        background-color: whitesmoke;
+        transition: all 0.7s; }
+        .talkToUsContent .sectionIdeas .sectionIdeas__form .buttonForm:hover {
+          background-color: #1E5096;
+          color: white; }
+      .talkToUsContent .sectionIdeas .sectionIdeas__form:hover {
+        border: solid 3px #1E5096; }
+      .talkToUsContent .sectionIdeas .sectionIdeas__form textarea {
+        font-size: 1.5rem; }
+    .talkToUsContent .sectionIdeas .cardTalkToUs {
+      border-radius: 10px;
+      transition: all 0.7s;
+      background-color: #020301;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: all; }
+      .talkToUsContent .sectionIdeas .cardTalkToUs img {
+        padding: 1rem; }
+      .talkToUsContent .sectionIdeas .cardTalkToUs .card__title {
+        padding: 1rem;
+        font-size: 2rem;
+        line-height: auto;
+        text-align: center;
+        color: #FFFEFF; }
+      .talkToUsContent .sectionIdeas .cardTalkToUs .card__text {
+        padding: 1rem;
+        font-size: 1.5rem;
+        line-height: auto;
+        text-align: center;
+        color: #FFFEFF; }
+      @media (min-width: 991px) {
+        .talkToUsContent .sectionIdeas .cardTalkToUs {
+          margin-top: 5rem; } }
+  .talkToUsContent .advisorContact {
+    align-items: center; }
+    .talkToUsContent .advisorContact .advisorContact__title--xl {
+      font-size: 3rem;
+      line-height: auto;
+      text-align: center;
+      color: white; }
+      .talkToUsContent .advisorContact .advisorContact__title--xl span {
+        color: #1E5096; }
+    .talkToUsContent .advisorContact .advisorContact__text {
+      font-size: 2rem;
+      line-height: auto;
+      text-align: center;
+      color: white;
+      margin: 1rem;
+      padding: 1rem; }
+    .talkToUsContent .advisorContact .sectionAdvisor__form {
+      width: 80%;
+      margin: 3rem;
+      padding: 1rem;
+      background-color: #1E5096;
+      border: solid 3px white;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: all; }
+      .talkToUsContent .advisorContact .sectionAdvisor__form label {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        text-align: left;
+        color: white;
+        overflow-y: hidden; }
+      .talkToUsContent .advisorContact .sectionAdvisor__form input {
+        font-size: 1.5rem; }
+      .talkToUsContent .advisorContact .sectionAdvisor__form select {
+        font-size: 1.5rem; }
+      .talkToUsContent .advisorContact .sectionAdvisor__form textarea {
+        font-size: 1.5rem; }
+      .talkToUsContent .advisorContact .sectionAdvisor__form .buttonForm {
+        background-color: whitesmoke;
+        transition: all 0.7s; }
+        .talkToUsContent .advisorContact .sectionAdvisor__form .buttonForm:hover {
+          background-color: #1E5096;
+          color: white; }
+      .talkToUsContent .advisorContact .sectionAdvisor__form:hover {
+        border: solid 3px #1E5096; }
 
 /*Footer*/
 .pie {
