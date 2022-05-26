@@ -204,10 +204,16 @@ const printCart = () => {
       </div>
       
       <div class="btn-group buttonCard-eliminar" role="group" aria-label="Invesments kart">
-        <button onclick="deleteCart(${project.id})" type="button" class="btn btn-danger"> Delete </button>
+        <button id="delete${project.id}" type="button" class="btn btn-danger"> Delete </button>
       </div>
     </figure>`
     conteinerCarrito.appendChild(card);
+
+    const botonDelete = document.getElementById(`delete${project.id}`)
+  
+    botonDelete.addEventListener('click', () => {
+      deleteCart(project.id)
+    })
 
     // Set local storage
     localStorage.setItem('carrito', JSON.stringify(carrito))
