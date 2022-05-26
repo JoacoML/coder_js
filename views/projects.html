@@ -50,13 +50,19 @@
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
       
       <div class="offcanvas-header">
-        <h2 class="offcanvas-title" id="offcanvasRightLabel">Investment Kart</h2>
+        <h2 class="offcanvas-title" id="offcanvasRightLabel">Investment Cart</h2>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
 
       <div id="conteinerCarrito" class="offcanvas-body projects__carrito">
-        <button type="button" class="btn btn-success">Pay all</button>
-        <button type="button" class="btn btn-danger">Empty Kart</button>
+      </div>
+
+      <p class="totalCarrito">Total price: U$$<span id="totalPriceCarrito">0</span>
+      </p>
+
+      <div class="botonCarrito">
+        <button id="pagarCarrito" type="button" class="btn btn-success">Pay all</button>
+        <button id="vaciarCarrito" type="button" class="btn btn-danger">Empty Cart</button>
       </div>
 
     </div>

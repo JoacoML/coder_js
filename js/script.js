@@ -74,9 +74,6 @@ class Project {
     this.cantidad++;
     this.inPortfolio = true;
   }
-  quitarUnidad() {
-    this.cantidad--;
-  }
   actualizarPrecioTotal() {
     this.totalPrice = this.price * this.cantidad;
   }
@@ -103,20 +100,17 @@ const conteinerProject = document.getElementById('conteinerProject')
 const conteinerCarrito = document.getElementById('conteinerCarrito')
 const vaciarCarrito = document.getElementById('vaciarCarrito')
 const pagarCarrito = document.getElementById('pagarCarrito')
-const totalPrice = document.getElementById('totalPriceCarrito')
+const totalPriceCarrito = document.getElementById('totalPriceCarrito')
 let carrito = [];
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   if (localStorage.getItem('carrito')){
-//     carrito = JSON.parse(localStorage.getItem('carrito'))
-//     actualizarCarrito()
-//   }
-// })
+// Get local storage
 
-// vaciarCarrito.addEventListener('click', () => {
-//   carrito.length = 0
-//   actualizarCarrito()
-// })
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('carrito')){
+    carrito = JSON.parse(localStorage.getItem('carrito'))
+    printCart()
+  }
+})
 
 // Impresion del Stock
 
@@ -129,9 +123,9 @@ projectStock.forEach((project) => {
     <p class="card__text">Risk: ${project.risk}</p>
     <p class="card__text">APY: ${project.anualReturn}</p>
     <p class="card__text"><strong>USD ${project.price}</strong></p>
-    <div class="btn-group" role="group" aria-label="Invesments kart">
+    <div class="btn-group" role="group">
       <button id="buy${project.id}" type="button" class="btn buttonCard"> Buy </button>
-      </div>
+    </div>
   </figure>`
   conteinerProject.appendChild(card);
 
@@ -146,16 +140,31 @@ projectStock.forEach((project) => {
 // Funcion argegar al carrito
 
 const addToCart = (projectId) => {
+  const inCart = carrito.find((project) => project.id === projectId);
+
+  if (inCart) {
+    let index = carrito.findIndex((project) => project.id === inCart.id);
+    carrito[index].addToPorfolio();
+    carrito[index].actualizarPrecioTotal();
+    
+    alert(`
+    Otra accion de ${inCart.title} 🎉
+    Total: ${inCart.cantidad} acciones
+    Precio total: U$$${inCart.totalPrice}
+    APY: ${inCart.anualReturn}`);
+
+  } else {
   let newProject = projectStock.find((project) => project.id === projectId);
   carrito.push(newProject);
   carrito[carrito.length - 1].actualizarPrecioTotal();
-  printCart()
+  
   alert(`
     Una accion de ${newProject.title} enviada al carrito 🎉
     Precio total: U$$${newProject.price}
     APY: ${newProject.anualReturn}`
   );
-  console.table(carrito)
+}
+printCart()
 }
 
 // Funcion eliminar del carrito
@@ -165,6 +174,17 @@ const deleteCart = (projectId) => {
   carrito.splice(index,1);
   printCart()
 } 
+
+// Funcion borrar carrito
+vaciarCarrito.addEventListener('click', () => {
+  carrito.length = 0
+  printCart()
+})
+
+// Funcion pagar carrito
+pagarCarrito.addEventListener('click', () => {
+  alert(`Tu inversion total es de U$$${totalCarrito}. Gracias! 😄`);
+})
 
 // Impresion del carrito
 
@@ -176,18 +196,28 @@ const printCart = () => {
     card.innerHTML = `
     <figure class="card m-3">
       <h3 class="card__title">${project.title}</h3>
-      <p class="card__text">Stocks n: ${project.cantidad}</p>
-      <p class="card__text">Total: <strong>USD${project.totalPrice}</strong></p>
-      <p class="card__text">APY: ${project.anualReturn}</p>
-      <div class="btn-group" role="group" aria-label="Invesments kart">
-        <button onclick="deleteCart(${project.id})" type="button" class="btn btn-danger buttonCard-eliminar"> Delete </button>
+      
+      <div class="card__info">
+        <p class="card__text">Stocks n: ${project.cantidad}</p>
+        <p class="card__text">APY: ${project.anualReturn}</p>
+        <p class="card__text">Total: <strong>USD${project.totalPrice}</strong></p>
+      </div>
+      
+      <div class="btn-group buttonCard-eliminar" role="group" aria-label="Invesments kart">
+        <button onclick="deleteCart(${project.id})" type="button" class="btn btn-danger"> Delete </button>
       </div>
     </figure>`
     conteinerCarrito.appendChild(card);
+
+    // Set local storage
+    localStorage.setItem('carrito', JSON.stringify(carrito))
   
   })
-
+  
+  totalPriceCarrito.innerText = carrito.reduce((total, elemento) => total + elemento.totalPrice, 0);
+  totalCarrito = carrito.reduce((total, elemento) => total + elemento.totalPrice, 0);
 }
+
 
 // // Menu de proyectos
 // function projectsMenu() {
