@@ -1,6 +1,5 @@
 // home
 .homeContent{
-    grid-area: homeContent;
     @include flexContent(column, center, all);
     margin-top: 11vh;
     background-color: rgb(83, 111, 142);

@@ -1,5 +1,5 @@
 /*Log In*/
-body{
+.logIn{
 	background-color: rgb(83, 111, 142);
 	.logInContent{
 		margin-top: 8rem;
@@ -69,6 +69,7 @@ body{
 		}
 	}
 	.logIn__quotes{
+		margin-top: 10%;
 		margin-left: 5%;
 		margin-right: 5%;
 		padding: 1rem;

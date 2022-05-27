@@ -9,7 +9,7 @@
 html {
   font-size: 62.5%; }
 
-body .logInContent .logIn__form .buttonForm, .projectsContent .projects__card .card div .buttonCard, .talkToUsContent .sectionIdeas .sectionIdeas__form .buttonForm, .talkToUsContent .advisorContact .sectionAdvisor__form .buttonForm {
+.logIn .logInContent .logIn__form .buttonForm, .projectsContent .projects__card .card div .buttonCard, .talkToUsContent .sectionIdeas .sectionIdeas__form .buttonForm, .talkToUsContent .advisorContact .sectionAdvisor__form .buttonForm {
   margin: 1rem;
   padding: 0.3rem;
   border-color: #FFFEFF;
@@ -21,14 +21,13 @@ body .logInContent .logIn__form .buttonForm, .projectsContent .projects__card .c
   color: black;
   transition: all 0.7s;
   width: 30%; }
-  body .logInContent .logIn__form .buttonForm:hover, .projectsContent .projects__card .card div .buttonCard:hover, .talkToUsContent .sectionIdeas .sectionIdeas__form .buttonForm:hover, .talkToUsContent .advisorContact .sectionAdvisor__form .buttonForm:hover {
+  .logIn .logInContent .logIn__form .buttonForm:hover, .projectsContent .projects__card .card div .buttonCard:hover, .talkToUsContent .sectionIdeas .sectionIdeas__form .buttonForm:hover, .talkToUsContent .advisorContact .sectionAdvisor__form .buttonForm:hover {
     transform: scale(1.1);
     background-color: #1E5096;
     color: white; }
 
 .botonera {
-  background-color: #FFFEFF;
-  grid-area: botonera; }
+  background-color: #FFFEFF; }
   .botonera .botonera-desc {
     max-width: 1140px;
     margin: auto;
@@ -49,7 +48,6 @@ body .logInContent .logIn__form .buttonForm, .projectsContent .projects__card .c
         width: 60%; }
 
 .homeContent {
-  grid-area: homeContent;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -132,9 +130,9 @@ body .logInContent .logIn__form .buttonForm, .projectsContent .projects__card .c
           color: black; }
 
 /*Log In*/
-body {
+.logIn {
   background-color: #536f8e; }
-  body .logInContent {
+  .logIn .logInContent {
     margin-top: 8rem;
     margin-left: 5%;
     margin-right: 5%;
@@ -142,69 +140,70 @@ body {
     background-color: #1E5096;
     border: solid 3px white;
     border-radius: 10px; }
-    body .logInContent .logIn__logo {
+    .logIn .logInContent .logIn__logo {
       margin: 2rem;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       align-items: center; }
-      body .logInContent .logIn__logo img {
+      .logIn .logInContent .logIn__logo img {
         width: 18rem;
         border-radius: 30px; }
-    body .logInContent .logIn__form {
+    .logIn .logInContent .logIn__form {
       font-size: 1.5rem;
       line-height: auto;
       text-align: left;
       color: white;
       justify-content: space-around;
       transition: all 0.7s; }
-      body .logInContent .logIn__form fieldset {
+      .logIn .logInContent .logIn__form fieldset {
         font-size: 1.7rem; }
-        body .logInContent .logIn__form fieldset label {
+        .logIn .logInContent .logIn__form fieldset label {
           font-size: 1.7rem;
           color: rgba(103, 212, 222, 0.9);
           padding: 2px; }
-        body .logInContent .logIn__form fieldset input {
+        .logIn .logInContent .logIn__form fieldset input {
           font-size: 1.5rem; }
-      body .logInContent .logIn__form .buttonForm {
+      .logIn .logInContent .logIn__form .buttonForm {
         background-color: whitesmoke;
         transition: all 0.7s; }
-        body .logInContent .logIn__form .buttonForm:hover {
+        .logIn .logInContent .logIn__form .buttonForm:hover {
           transform: scale(1.1);
           background-color: #e1b35d;
           color: white; }
-    body .logInContent .logIn__title {
+    .logIn .logInContent .logIn__title {
       font-size: 2rem;
       line-height: auto;
       text-align: center;
       color: white;
       padding-top: 0.5rem;
       border-top: solid 2px white; }
-    body .logInContent .logIn__icon {
+    .logIn .logInContent .logIn__icon {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
       margin: 1rem; }
-      body .logInContent .logIn__icon img {
+      .logIn .logInContent .logIn__icon img {
         width: 5vh;
         margin: 0.5rem 0.5rem;
         border-radius: 15%; }
-        body .logInContent .logIn__icon img:hover {
+        .logIn .logInContent .logIn__icon img:hover {
           background-color: rgba(103, 212, 222, 0.9); }
-      body .logInContent .logIn__icon a {
+      .logIn .logInContent .logIn__icon a {
         text-decoration: none; }
-    body .logInContent .logIn__copy {
+    .logIn .logInContent .logIn__copy {
       margin-top: 1rem;
       font-size: 1.5rem;
       line-height: auto;
       text-align: center;
       color: white; }
-  body .logIn__quotes {
+  .logIn .logIn__quotes {
+    margin-top: 10%;
     margin-left: 5%;
     margin-right: 5%;
     padding: 1rem; }
-    body .logIn__quotes .logIn__card {
+    .logIn .logIn__quotes .logIn__card {
       background-color: rgba(103, 212, 222, 0.9);
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
@@ -213,29 +212,29 @@ body {
       line-height: auto;
       text-align: center;
       color: black; }
-      body .logIn__quotes .logIn__card .card__title {
+      .logIn .logIn__quotes .logIn__card .card__title {
         padding: 0.5rem;
         font-size: 2rem;
         line-height: auto;
         text-align: center;
         color: #FFFEFF; }
-      body .logIn__quotes .logIn__card .card__text {
+      .logIn .logIn__quotes .logIn__card .card__text {
         padding: 1rem;
         font-size: 1.7rem;
         line-height: auto;
         text-align: start;
         color: #FFFEFF; }
-        body .logIn__quotes .logIn__card .card__text footer {
+        .logIn .logIn__quotes .logIn__card .card__text footer {
           margin-top: 0.5rem;
           font-size: 1.5rem;
           line-height: auto;
           text-align: start;
           color: #FFFEFF;
           margin-left: 7rem; }
-      body .logIn__quotes .logIn__card:hover {
+      .logIn .logIn__quotes .logIn__card:hover {
         transform: scale(1.01); }
   @media (min-width: 768px) {
-    body {
+    .logIn {
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -243,7 +242,6 @@ body {
 
 /*Projects*/
 .projectsContent {
-  grid-area: projectsContent;
   padding-top: 10rem;
   background-color: #536f8e; }
   .projectsContent .projects__title--xl {
@@ -365,6 +363,7 @@ body {
 
 /*Talk to us*/
 .talkToUsContent {
+  width: 100%;
   margin-top: 9rem;
   background-color: #536f8e; }
   .talkToUsContent .talkToUs__title--xl {
@@ -507,7 +506,6 @@ body {
 
 /*Footer*/
 .pie {
-  grid-area: pie;
   background-color: rgba(222, 218, 218, 0.835);
   padding: 1rem; }
   .pie .pie__nav {
