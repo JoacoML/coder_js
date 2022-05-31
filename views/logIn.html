@@ -28,18 +28,18 @@
       </a>
     </div>
     
-    <form action="donate.php" method="post" enctype="" class="row p-3 g-3 needs-validation logIn__form"
+    <form action="logIn.php" method="post" enctype="" class="row p-3 g-3 needs-validation logIn__form"
       novalidate>
       <fieldset class="m-2">
 
         <div class="mb-3">
-          <label for="email" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="email" placeholder="name@example.com">
+          <label for="user" class="form-label">User name</label>
+          <input type="text" class="form-control" id="user" placeholder="User name">
         </div>
 
         <div class="mb-3">
-          <label for="name" class="form-label">Password</label>
-          <input type="text" class="form-control" id="pass" placeholder="12345">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="pass" placeholder="12345">
         </div>
 
         <label for="Region">Region</label>
@@ -64,7 +64,7 @@
         </div>
       </div>
       <div>
-        <button class="btn btn-primary buttonForm" type="submit">Log in</button>
+        <button id="logIn" class="btn buttonForm" type="button">Log in</button>
       </div>
     </form>
     <!-- Titulo Login redes sociales -->
