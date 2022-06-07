@@ -106,6 +106,7 @@ const addToCart = (projectId) => {
     Precio total: U$$${newProject.price}
     APY: ${newProject.anualReturn}`
   );
+
 }
 printCart()
 }
@@ -127,6 +128,8 @@ vaciarCarrito.addEventListener('click', () => {
 // Funcion pagar carrito
 pagarCarrito.addEventListener('click', () => {
   alert(`Tu inversion total es de U$$${totalCarrito}. Gracias! 😄`);
+  carrito.length = 0;
+  printCart();
 })
 
 // Impresion del carrito
@@ -158,11 +161,13 @@ const printCart = () => {
       deleteCart(project.id)
     })
 
-    // Set local storage
-    localStorage.setItem('carrito', JSON.stringify(carrito))
-  
   })
   
+  // Set local storage
+  localStorage.setItem('carrito', JSON.stringify(carrito))
+
   totalPriceCarrito.innerText = carrito.reduce((total, elemento) => total + elemento.totalPrice, 0);
   totalCarrito = carrito.reduce((total, elemento) => total + elemento.totalPrice, 0);
 }
+
+

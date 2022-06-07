@@ -1,8 +1,5 @@
 //////// Log in ////////
 
-
-// Nombre del Usuario y fecha del dia
-
 // Ingresar pass y conteo de 3 intentos de Log
 
 const botonLogIn = document.getElementById("logIn")
