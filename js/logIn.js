@@ -1,6 +1,28 @@
 //////// Log in ////////
 
+//////// Usuarios ////////
+
+//Clase de poryectos con funcion constructora
+class User {
+    constructor(id, name, role, email, password) {
+        this.id = id;        
+        this.name = name;
+        this.role = role.toUpperCase();
+        this.email = email
+        this.password = password;
+    }
+}
+  
+// array de stock de proyectos
+const userDB = [];
+
+//Pusheo los proyectos al Stock
+userDB.push(new User("JoacoML", "Joaquin", "Investor", "joaco.martin.lanfranchi@gmail.com", "12345"));
+userDB.push(new User("Emi", "Emiliano", "Investor", "emi@coder.com", "123"));
+
 // Ingresar pass y conteo de 3 intentos de Log
+
+let x = 0;
 
 const botonLogIn = document.getElementById("logIn")
   
@@ -8,20 +30,28 @@ botonLogIn.addEventListener('click', () => {
   logIn()
 })
 
-let x = 0;
-
 function logIn (){
-    let user = document.getElementById("user").value;
+    let userId = document.getElementById("user").value;
+
+    const userLog = userDB.find((user) => user.id === userId);
+
+    userCrorrect = (userLog) ? true : alert("Usuario no existe");
+
+    // Desestructuracion del Objeto User
+    const {id, name, password} = userLog
+
     let pass = document.getElementById("pass").value;
     while (x<3){
-        if (pass === "12345") {
-            alert("Hola " + user + ", " + "bienvenido a ACTIONS");
+        
+        passCrorrect = (pass == password) ? true : false 
+
+        if (passCrorrect) {
+            alert("Hola " + name + ", " + "bienvenido a ACTIONS");
             window.location = "../views/projects.html";
-        }
-        if(pass !== "12345"){
+        }else
             x++
-            alert("Contrasña incorrecta. Intenta de nuevo");
-        }
+            alert(id + " tu contrasña es incorrecta. Intenta de nuevo");
+
         if (x === 3) {
             alert("Su cuenta ha sido bloqueada");
         }

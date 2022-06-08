@@ -47,6 +47,8 @@ const totalPriceCarrito = document.getElementById('totalPriceCarrito')
 let carrito = [];
 
 // Get local storage
+// Como puedo simplificar este codigo con un OR?
+// const carrito = JSON.parse(localStorage.getItem('carrito')) || []
 
 document.addEventListener('DOMContentLoaded', () => {
   if (localStorage.getItem('carrito')){
