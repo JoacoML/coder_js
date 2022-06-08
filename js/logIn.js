@@ -48,9 +48,7 @@ function logIn (){
         if (passCrorrect) {
             alert("Hola " + name + ", " + "bienvenido a ACTIONS");
             window.location = "../views/projects.html";
-        }else
-            x++
-            alert(id + " tu contrasña es incorrecta. Intenta de nuevo");
+        }else x++; alert(id + " tu contrasña es incorrecta. Intenta de nuevo");
 
         if (x === 3) {
             alert("Su cuenta ha sido bloqueada");
