@@ -361,6 +361,13 @@ html {
       .projectsContent .botonCarrito .btn:nth-child(2) {
         width: 60%; }
 
+.notiCarrito {
+  padding: 1rem;
+  font-size: 1.3rem;
+  line-height: auto;
+  text-align: center;
+  color: white; }
+
 /*Talk to us*/
 .talkToUsContent {
   width: 100%;

@@ -91,23 +91,40 @@ const addToCart = (projectId) => {
     let index = carrito.findIndex((project) => project.id === inCart.id);
     carrito[index].addToPorfolio();
     carrito[index].actualizarPrecioTotal();
-    
-    alert(`
-    Otra accion de ${inCart.title} 🎉
-    Total: ${inCart.cantidad} acciones
-    Precio total: U$$${inCart.totalPrice}
-    APY: ${inCart.anualReturn}`);
+
+    Toastify({
+      text:`Otra accion de ${inCart.title} 🎉`,
+      duration:3000,
+      gravity:'top',
+      className: "notiCarrito",
+      position:'center'
+    }).showToast();
+
+    // alert(`
+    // Otra accion de ${inCart.title} 🎉
+    // Total: ${inCart.cantidad} acciones
+    // Precio total: U$$${inCart.totalPrice}
+    // APY: ${inCart.anualReturn}`);
 
   } else {
   let newProject = projectStock.find((project) => project.id === projectId);
   carrito.push(newProject);
   carrito[carrito.length - 1].actualizarPrecioTotal();
   
-  alert(`
-    Una accion de ${newProject.title} enviada al carrito 🎉
-    Precio total: U$$${newProject.price}
-    APY: ${newProject.anualReturn}`
-  );
+  
+  Toastify({
+    text:`Una accion de ${newProject.title} enviada al carrito 🎉`,
+    duration:3000,
+    gravity:'top',
+    className: "notiCarrito",
+    position:'center'
+  }).showToast();
+
+  // alert(`
+  //   Una accion de ${newProject.title} enviada al carrito 🎉
+  //   Precio total: U$$${newProject.price}
+  //   APY: ${newProject.anualReturn}`
+  // );
 
 }
 printCart()
