@@ -2,40 +2,23 @@
 
 //Clase de poryectos con funcion constructora
 class Project {
-  constructor(id, title, ticker, price, risk, anualReturn, img) {
-    this.id = id;
-    this.title = title.toUpperCase();
-    this.ticker = ticker.toUpperCase();
-    this.price = price;
-    this.risk = risk;
-    this.anualReturn = anualReturn;
-    this.img = img;
+  constructor(project) {
+    this.id = project.id;
+    this.title = project.title;
+    this.ticker = project.ticker;
+    this.price = project.price;
+    this.risk = project.risk;
+    this.anualReturn = project.anualReturn;
+    this.img = project.img;
     this.cantidad = 1;
-    this.inPortfolio = false;
   }
   addToPorfolio() {
     this.cantidad++;
-    this.inPortfolio = true;
   }
   actualizarPrecioTotal() {
     this.totalPrice = this.price * this.cantidad;
   }
 }
-
-
-// array de stock de proyectos
-const projectStock = [];
-
-//Pusheo los proyectos al Stock
-projectStock.push(new Project("0", "The ocean cleanup", "TOCU", 120, "AAA", "15%", "../img/project1.jpg"));
-projectStock.push(new Project("1", "Seabin fundation", "SEAB", 100, "AAB", "20%", "../img/project2.jpg"));
-projectStock.push(new Project("2", "Renovable verano", "REVE", 60, "ABB", "25%", "../img/project3.jpg"));
-projectStock.push(new Project("3", "Sonic cleanup", "SONI", 50, "ABC", "30%", "../img/project4.jpg"));
-projectStock.push(new Project("4", "Eco schools", "ESCH", 80, "AAB", "20%", "../img/project5.jpg"));
-projectStock.push(new Project("5", "Trash into treasure", "TSUR", 50, "AAB", "15%", "../img/project6.jpg"));
-projectStock.push(new Project("6", "Dronegenuity", "DROG", 200, "AAB", "20%", "../img/project7.jpg"));
-projectStock.push(new Project("7", "Sustainable sewage", "ESEW", 300, "AAA", "18%", "../img/project8.jpg"));
-projectStock.push(new Project("8", "Green building", "GREN", 250, "AAB", "20%", "../img/project9.jpg"));
 
 //Carrtio de compras. Variables
 
@@ -59,28 +42,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Impresion del Stock
 
-projectStock.forEach((project) => {
-  let card = document.createElement('div')
-  card.innerHTML = `
-  <figure class="card m-3">
-    <img src="${project.img}" class="card-img-top" alt="${project.title}">
-    <h2 class="card__title">${project.title}</h2>
-    <p class="card__text">Risk: ${project.risk}</p>
-    <p class="card__text">APY: ${project.anualReturn}</p>
-    <p class="card__text"><strong>USD ${project.price}</strong></p>
-    <div class="btn-group" role="group">
-      <button id="buy${project.id}" type="button" class="btn buttonCard"> Buy </button>
-    </div>
-  </figure>`
-  conteinerProject.appendChild(card);
+function printStock(){
+  const stock="../api/stock.json";
+  fetch(stock)
+    .then(resultado => resultado.json())
+    .then(data =>{
+      projectStock = data;
+      console.log(projectStock)
+      projectStock.forEach((project) => {
+        let card = document.createElement('div')
+        card.innerHTML = `
+        <figure class="card m-3">
+          <img src="${project.img}" class="card-img-top" alt="${project.title}">
+          <h2 class="card__title">${project.title}</h2>
+          <p class="card__text">Risk: ${project.risk}</p>
+          <p class="card__text">APY: ${project.anualReturn}</p>
+          <p class="card__text"><strong>USD ${project.price}</strong></p>
+          <div class="btn-group" role="group">
+            <button id="buy${project.id}" type="button" class="btn buttonCard"> Buy </button>
+          </div>
+        </figure>`
+        conteinerProject.appendChild(card);
+      
+        const botonBuy = document.getElementById(`buy${project.id}`)
+        
+        botonBuy.addEventListener('click', () => {
+          addToCart(project.id)
+        })
+      
+      })
+    })
+}
 
-  const botonBuy = document.getElementById(`buy${project.id}`)
-  
-  botonBuy.addEventListener('click', () => {
-    addToCart(project.id)
-  })
-
-})
+printStock();
 
 // Funcion argegar al carrito
 
@@ -100,15 +94,9 @@ const addToCart = (projectId) => {
       position:'center'
     }).showToast();
 
-    // alert(`
-    // Otra accion de ${inCart.title} 🎉
-    // Total: ${inCart.cantidad} acciones
-    // Precio total: U$$${inCart.totalPrice}
-    // APY: ${inCart.anualReturn}`);
-
   } else {
   let newProject = projectStock.find((project) => project.id === projectId);
-  carrito.push(newProject);
+  carrito.push(new Project(newProject));
   carrito[carrito.length - 1].actualizarPrecioTotal();
   
   
@@ -119,12 +107,6 @@ const addToCart = (projectId) => {
     className: "notiCarrito",
     position:'center'
   }).showToast();
-
-  // alert(`
-  //   Una accion de ${newProject.title} enviada al carrito 🎉
-  //   Precio total: U$$${newProject.price}
-  //   APY: ${newProject.anualReturn}`
-  // );
 
 }
 printCart()
