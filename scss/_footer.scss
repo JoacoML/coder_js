@@ -6,8 +6,9 @@
 		margin-top: 1rem;
 		margin-bottom: 1rem;
 		a{
-			@include text(1.7rem, auto, center, map-get($map:$paleta,$key:'dark'));
+			@include text($textM, auto, center, map-get($map:$paleta,$key:'dark'));
 			text-decoration: none;
+			border-bottom: 2px solid black
 		}
 	}
 	.pie__title{

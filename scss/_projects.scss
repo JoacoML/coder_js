@@ -83,7 +83,7 @@
 			}
 		}
 	}
-	.totalCarrito{
+	.totalPriceCarrito{
 		margin-right: 5%;
 		@include text(2rem, auto, end, $darkColor);
 	}
@@ -92,7 +92,7 @@
 		.btn{
 			margin-bottom: 0.3rem;
 			width: 70%;
-			font-size: 1.5rem;
+			font-size: 1.7rem;
 			&:nth-child(2){
 				width: 60%;
 			}

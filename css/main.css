@@ -9,7 +9,7 @@
 html {
   font-size: 62.5%; }
 
-.logIn .logInContent .logIn__form .buttonForm, .projectsContent .projects__card .card div .buttonCard, .talkToUsContent .sectionIdeas .sectionIdeas__form .buttonForm, .talkToUsContent .advisorContact .sectionAdvisor__form .buttonForm {
+.logIn .logInContent .logIn__form .buttonForm, .projectsContent .projects__card .card div .buttonCard {
   margin: 1rem;
   padding: 0.3rem;
   border-color: #FFFEFF;
@@ -21,7 +21,7 @@ html {
   color: black;
   transition: all 0.7s;
   width: 30%; }
-  .logIn .logInContent .logIn__form .buttonForm:hover, .projectsContent .projects__card .card div .buttonCard:hover, .talkToUsContent .sectionIdeas .sectionIdeas__form .buttonForm:hover, .talkToUsContent .advisorContact .sectionAdvisor__form .buttonForm:hover {
+  .logIn .logInContent .logIn__form .buttonForm:hover, .projectsContent .projects__card .card div .buttonCard:hover {
     transform: scale(1.1);
     background-color: #1E5096;
     color: white; }
@@ -36,16 +36,24 @@ html {
     .botonera .botonera-desc .botonera__logo {
       width: 18rem; }
     .botonera .botonera-desc .botonera__lista {
-      margin: 0.5rem;
-      padding: 1rem; }
-      .botonera .botonera-desc .botonera__lista a {
-        font-size: 1.5rem; }
-    .botonera .botonera-desc .botonLogIn {
-      font-size: 2rem; }
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end; }
+      .botonera .botonera-desc .botonera__lista .botonLogIn {
+        margin-right: 0.5rem;
+        font-size: 2rem; }
     .botonera .botonera-desc .botonCarrito {
-      margin-left: 2rem; }
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 3rem;
+      line-height: auto;
+      text-align: center;
+      color: black; }
       .botonera .botonera-desc .botonCarrito img {
-        width: 60%; }
+        width: 50%;
+        margin-right: 2rem; }
 
 .homeContent {
   display: flex;
@@ -87,8 +95,8 @@ html {
     .homeContent .sectionAboutUs .aboutUs__text--xl {
       margin: 1rem;
       padding: 1rem;
-      font-size: 1.7rem;
-      line-height: "";
+      font-size: 1.85rem;
+      line-height: auto;
       text-align: center;
       color: white; }
       .homeContent .sectionAboutUs .aboutUs__text--xl span {
@@ -106,14 +114,11 @@ html {
       .homeContent .sectionAboutUs .aboutUs__card img {
         width: 90%; }
       .homeContent .sectionAboutUs .aboutUs__card .aboutUs__text {
-        font-size: 1.5rem;
-        line-height: 2rem;
+        font-size: 1.7rem;
+        line-height: auto;
         text-align: left;
         color: white;
         margin: 1rem; }
-      .homeContent .sectionAboutUs .aboutUs__card .btn {
-        font-size: 2.5rem;
-        border-radius: 10px; }
       .homeContent .sectionAboutUs .aboutUs__card:nth-child(2) {
         background-color: rgba(255, 255, 255, 0.398); }
         .homeContent .sectionAboutUs .aboutUs__card:nth-child(2) .aboutUs__title {
@@ -124,8 +129,8 @@ html {
         .homeContent .sectionAboutUs .aboutUs__card:nth-child(2) img {
           margin-left: 7%; }
         .homeContent .sectionAboutUs .aboutUs__card:nth-child(2) .aboutUs__text {
-          font-size: 1.5rem;
-          line-height: 2rem;
+          font-size: 1.7rem;
+          line-height: auto;
           text-align: right;
           color: black; }
 
@@ -343,7 +348,7 @@ html {
           color: white; }
       .projectsContent .projects__carrito .card .buttonCard-eliminar {
         width: 20%; }
-  .projectsContent .totalCarrito {
+  .projectsContent .totalPriceCarrito {
     margin-right: 5%;
     font-size: 2rem;
     line-height: auto;
@@ -357,7 +362,7 @@ html {
     .projectsContent .botonCarrito .btn {
       margin-bottom: 0.3rem;
       width: 70%;
-      font-size: 1.5rem; }
+      font-size: 1.7rem; }
       .projectsContent .botonCarrito .btn:nth-child(2) {
         width: 60%; }
 
@@ -368,149 +373,6 @@ html {
   text-align: center;
   color: white; }
 
-/*Talk to us*/
-.talkToUsContent {
-  width: 100%;
-  margin-top: 9rem;
-  background-color: #536f8e; }
-  .talkToUsContent .talkToUs__title--xl {
-    padding: 1rem 3rem;
-    animation-name: textAlpha;
-    animation-duration: 2s;
-    font-size: 5rem;
-    line-height: auto;
-    text-align: center;
-    color: white; }
-  .talkToUsContent .talkToUs__text--xl {
-    font-size: 1.7rem;
-    line-height: auto;
-    text-align: center;
-    color: white;
-    border-top: solid 2px white;
-    margin: 1rem;
-    padding: 1rem; }
-    .talkToUsContent .talkToUs__text--xl span {
-      text-transform: uppercase;
-      color: #1E5096; }
-  .talkToUsContent .sectionIdeas {
-    align-items: center; }
-    .talkToUsContent .sectionIdeas .sectionIdeas__title--xl {
-      animation-name: textAlpha;
-      animation-duration: 2s;
-      font-size: 3rem;
-      line-height: auto;
-      text-align: center;
-      color: white; }
-    .talkToUsContent .sectionIdeas .sectionIdeas__text--xl {
-      font-size: 2rem;
-      line-height: auto;
-      text-align: center;
-      color: white;
-      margin: 1rem;
-      padding: 1rem; }
-      .talkToUsContent .sectionIdeas .sectionIdeas__text--xl span {
-        color: #1E5096; }
-    .talkToUsContent .sectionIdeas .sectionIdeas__form {
-      width: 80%;
-      margin: 3rem;
-      padding: 1rem;
-      background-color: #1E5096;
-      border: solid 3px white;
-      border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: all; }
-      .talkToUsContent .sectionIdeas .sectionIdeas__form label {
-        font-size: 1.5rem;
-        line-height: auto;
-        text-align: left;
-        color: white; }
-      .talkToUsContent .sectionIdeas .sectionIdeas__form input {
-        font-size: 1.5rem; }
-      .talkToUsContent .sectionIdeas .sectionIdeas__form .buttonForm {
-        background-color: whitesmoke;
-        transition: all 0.7s; }
-        .talkToUsContent .sectionIdeas .sectionIdeas__form .buttonForm:hover {
-          background-color: #1E5096;
-          color: white; }
-      .talkToUsContent .sectionIdeas .sectionIdeas__form:hover {
-        border: solid 3px #1E5096; }
-      .talkToUsContent .sectionIdeas .sectionIdeas__form textarea {
-        font-size: 1.5rem; }
-    .talkToUsContent .sectionIdeas .cardTalkToUs {
-      border-radius: 10px;
-      transition: all 0.7s;
-      background-color: #020301;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: all; }
-      .talkToUsContent .sectionIdeas .cardTalkToUs img {
-        padding: 1rem; }
-      .talkToUsContent .sectionIdeas .cardTalkToUs .card__title {
-        padding: 1rem;
-        font-size: 2rem;
-        line-height: auto;
-        text-align: center;
-        color: #FFFEFF; }
-      .talkToUsContent .sectionIdeas .cardTalkToUs .card__text {
-        padding: 1rem;
-        font-size: 1.5rem;
-        line-height: auto;
-        text-align: center;
-        color: #FFFEFF; }
-      @media (min-width: 991px) {
-        .talkToUsContent .sectionIdeas .cardTalkToUs {
-          margin-top: 5rem; } }
-  .talkToUsContent .advisorContact {
-    align-items: center; }
-    .talkToUsContent .advisorContact .advisorContact__title--xl {
-      font-size: 3rem;
-      line-height: auto;
-      text-align: center;
-      color: white; }
-      .talkToUsContent .advisorContact .advisorContact__title--xl span {
-        color: #1E5096; }
-    .talkToUsContent .advisorContact .advisorContact__text {
-      font-size: 2rem;
-      line-height: auto;
-      text-align: center;
-      color: white;
-      margin: 1rem;
-      padding: 1rem; }
-    .talkToUsContent .advisorContact .sectionAdvisor__form {
-      width: 80%;
-      margin: 3rem;
-      padding: 1rem;
-      background-color: #1E5096;
-      border: solid 3px white;
-      border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: all; }
-      .talkToUsContent .advisorContact .sectionAdvisor__form label {
-        font-size: 1.5rem;
-        line-height: 2rem;
-        text-align: left;
-        color: white;
-        overflow-y: hidden; }
-      .talkToUsContent .advisorContact .sectionAdvisor__form input {
-        font-size: 1.5rem; }
-      .talkToUsContent .advisorContact .sectionAdvisor__form select {
-        font-size: 1.5rem; }
-      .talkToUsContent .advisorContact .sectionAdvisor__form textarea {
-        font-size: 1.5rem; }
-      .talkToUsContent .advisorContact .sectionAdvisor__form .buttonForm {
-        background-color: whitesmoke;
-        transition: all 0.7s; }
-        .talkToUsContent .advisorContact .sectionAdvisor__form .buttonForm:hover {
-          background-color: #1E5096;
-          color: white; }
-      .talkToUsContent .advisorContact .sectionAdvisor__form:hover {
-        border: solid 3px #1E5096; }
-
 /*Footer*/
 .pie {
   background-color: rgba(222, 218, 218, 0.835);
@@ -519,11 +381,12 @@ html {
     margin-top: 1rem;
     margin-bottom: 1rem; }
     .pie .pie__nav a {
-      font-size: 1.7rem;
+      font-size: 3rem;
       line-height: auto;
       text-align: center;
       color: #020301;
-      text-decoration: none; }
+      text-decoration: none;
+      border-bottom: 2px solid black; }
   .pie .pie__title {
     font-size: 2rem;
     line-height: auto;

@@ -41,7 +41,7 @@
         .aboutUs__text--xl{
             margin: 1rem;
             padding: 1rem;
-            @include text(1.7rem, "", center, $lightColor);
+            @include text(1.85rem, auto, center, $lightColor);
             span{
                 text-transform: uppercase;
                 color: map-get($map:$paleta,$key:'dark');
@@ -58,12 +58,8 @@
                 width: 90%;
             }
             .aboutUs__text{
-                @include text($textS, 2rem, left, $lightColor);
+                @include text(1.7rem, auto, left, $lightColor);
                 margin: 1rem;
-            }
-            .btn{
-                font-size: 2.5rem;
-                border-radius: 10px;
             }
 
             &:nth-child(2){
@@ -75,7 +71,7 @@
                     margin-left: 7%;
                 }
                 .aboutUs__text{
-                    @include text($textS, 2rem, right, $darkColor);
+                    @include text(1.7rem, auto, right, $darkColor);
                 }
             }
         }

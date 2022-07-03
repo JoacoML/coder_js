@@ -26,23 +26,11 @@
   <nav class="navbar navbar-expand-sm navbar-light fixed-top botonera">
     <div class="container botonera-desc">
       <a class="navbar-brand" href="../index.html"><img class="botonera__logo" src="../img/home_logo.png"
-          alt="Actions logo"></a>
-      <button class="navbar-toggler m-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end botonera__lista" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="talk_to_us.html">Talk to us</a>
-          </li>
-          
-        </ul>
-      </div>
+          alt="Actions logo">
+      </a>
+
       <button class="btn botonCarrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+        <p id="totalCarrito">0</p>
         <img src="../img/carrito.png" alt="logo carrito">
       </button>
     </div>
@@ -65,7 +53,7 @@
       <div id="conteinerCarrito" class="offcanvas-body projects__carrito">
       </div>
 
-      <p class="totalCarrito">Total price: U$$<span id="totalPriceCarrito">0</span>
+      <p class="totalPriceCarrito">Total price: U$$<span id="totalBuy">0</span>
       </p>
 
       <div class="botonCarrito">
@@ -83,10 +71,7 @@
     <!-- nav del footer -->
     <ul class="nav flex-column pie__nav col-md-3 col-sm-12 ">
       <li class="nav-item">
-        <a class="nav-link" href="projects.html">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="talk_to_us.html">Talk to us</a>
+        <a class="nav-link" href="../index.html">Home</a>
       </li>
     </ul>
 

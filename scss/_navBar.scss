@@ -10,20 +10,21 @@
 		}
 		/* Lista accesos */
 		.botonera__lista {
-			margin: 0.5rem;
-			padding: 1rem;
-
-			a {
-				font-size: $textS;
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: flex-end;
+			.botonLogIn{
+				margin-right: 0.5rem;
+				font-size: 2rem;
 			}
 		}
-		.botonLogIn{
-			font-size: 2rem;
-		}
+		
 		.botonCarrito{
-			margin-left: 2rem;
+			@include flexContent(row, space-around, center);
+			@include text($textM, auto, center, $darkColor);
 			img{
-				width: 60%;
+				width: 50%;
+				margin-right: 2rem;
 			}
 		}
 	}
