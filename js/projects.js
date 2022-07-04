@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (localStorage.getItem('carrito')){
     carrito = JSON.parse(localStorage.getItem('carrito'));
     printCart()
-    console.log(carrito)
   }
 })
 
@@ -79,22 +78,43 @@ printStock();
 // Funcion eliminar del carrito
 const deleteCart = (projectId) => {
   const item = carrito.find((project) => project.id === projectId);
+  
+  Toastify({
+    text:`${item.title} Deleted from cart ❌`,
+    duration:3000,
+    gravity:'bottom',
+    className: "notiCarrito",
+    position:'center'
+  }).showToast();
+
   const index = carrito.indexOf(item); 
   carrito.splice(index,1);
   printCart()
+
 }
 
 // Funcion borrar carrito
 vaciarCarrito.addEventListener('click', () => {
+  
+  Swal.fire({
+    icon: 'error',
+    title: 'No investment done',
+    text: 'No Actions taken!',
+  })
   carrito.length = 0
   printCart();
 })
 
 // Funcion pagar carrito
 pagarCarrito.addEventListener('click', () => {
-  alert(`Tu inversion total es de U$$${totalBuy}. Gracias! 😄`);
+  Swal.fire({
+    icon: 'success',
+    title: 'Investment done', 
+    text: 'You are taking Actions',
+  })
   carrito.length = 0;
   printCart();
+
 })
 
 // Funcion argegar al carrito
@@ -113,15 +133,7 @@ const addToCart = (projectId) => {
     function actualizarPrecioTotal(){
       inCart.totalPrice = inCart.price * inCart.cantidad;
     }
-    
     actualizarPrecioTotal()
-
-    // const index = carrito.findIndex((project) => project.id === inCart.id);
-    // carrito[index].addToPorfolio();
-    // carrito[index].actualizarPrecioTotal();
-
-    // inCart.addToPorfolio();
-    // inCart.actualizarPrecioTotal();
 
     Toastify({
       text:`Otra accion de ${inCart.title} 🎉`,

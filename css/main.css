@@ -41,7 +41,7 @@ html {
       justify-content: flex-end; }
       .botonera .botonera-desc .botonera__lista .botonLogIn {
         margin-right: 0.5rem;
-        font-size: 2rem; }
+        font-size: 1.7rem; }
     .botonera .botonera-desc .botonCarrito {
       display: flex;
       flex-direction: row;
@@ -370,12 +370,13 @@ html {
       .projectsContent .botonCarrito .btn:nth-child(2) {
         width: 70%;
         height: 40px; }
-  .projectsContent .notiCarrito {
-    padding: 1rem;
-    font-size: 1.3rem;
-    line-height: auto;
-    text-align: center;
-    color: white; }
+
+.notiCarrito {
+  padding: 1rem;
+  font-size: 2rem;
+  line-height: auto;
+  text-align: center;
+  color: white; }
 
 /*Footer*/
 .pie {

@@ -105,8 +105,8 @@
 			
 		}
 	}
-	.notiCarrito{
-		padding: 1rem;
-		@include text(1.3rem, auto, center, $lightColor);
-	}
+}
+.notiCarrito{
+	padding: 1rem;
+	@include text(2rem, auto, center, $lightColor);
 }
