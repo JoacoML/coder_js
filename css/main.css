@@ -348,6 +348,9 @@ html {
           color: white; }
       .projectsContent .projects__carrito .card .buttonCard-eliminar {
         width: 20%; }
+        @media (max-width: 768px) {
+          .projectsContent .projects__carrito .card .buttonCard-eliminar {
+            height: 30px; } }
   .projectsContent .totalPriceCarrito {
     margin-right: 5%;
     font-size: 2rem;
@@ -358,20 +361,21 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center; }
+    align-items: center;
+    height: 230px; }
     .projectsContent .botonCarrito .btn {
       margin-bottom: 0.3rem;
-      width: 70%;
+      width: 40%;
       font-size: 1.7rem; }
       .projectsContent .botonCarrito .btn:nth-child(2) {
-        width: 60%; }
-
-.notiCarrito {
-  padding: 1rem;
-  font-size: 1.3rem;
-  line-height: auto;
-  text-align: center;
-  color: white; }
+        width: 70%;
+        height: 40px; }
+  .projectsContent .notiCarrito {
+    padding: 1rem;
+    font-size: 1.3rem;
+    line-height: auto;
+    text-align: center;
+    color: white; }
 
 /*Footer*/
 .pie {

@@ -1,5 +1,14 @@
 //////// Proyectos ////////
 
+// Get local storage
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('carrito')){
+    carrito = JSON.parse(localStorage.getItem('carrito'));
+    printCart()
+    console.log(carrito)
+  }
+})
+
 //Clase de poryectos con funcion constructora
 class Project {
   constructor(project) {
@@ -30,16 +39,8 @@ const pagarCarrito = document.getElementById('pagarCarrito')
 
 let carrito = [];
 
-const totalCarrito = document.getElementById('totalCarrito').innerHTML = carrito.length;
+let totalCarrito = document.getElementById('totalCarrito').innerHTML = carrito.length;
 
-// Get local storage
-document.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.getItem('carrito')){
-    carrito = JSON.parse(localStorage.getItem('carrito'));
-    printCart()
-    console.log(carrito)
-  }
-})
 // Impresion del Stock
 
 function printStock(){
@@ -114,7 +115,7 @@ const addToCart = (projectId) => {
     }
     
     actualizarPrecioTotal()
-    
+
     // const index = carrito.findIndex((project) => project.id === inCart.id);
     // carrito[index].addToPorfolio();
     // carrito[index].actualizarPrecioTotal();
@@ -143,7 +144,7 @@ const addToCart = (projectId) => {
       position:'center'
     }).showToast();
   }
-printCart()
+  printCart()
 }
 
 // Impresion del carrito
@@ -185,6 +186,6 @@ function printCart() {
 
   // totalCart 
   let totalCarrito = document.getElementById('totalCarrito').innerHTML = carrito.length;
-
+  totalCarrito;
 
 }
