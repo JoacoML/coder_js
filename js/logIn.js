@@ -34,26 +34,34 @@ function logIn() {
     let userId = document.getElementById("user").value;
     const userLog = userDB.find((user) => user.id === userId);
     
-    userLog || alert("Usuario no existe");
+    userLog || 
+    Swal.fire({
+        icon: 'error',
+        title: 'User not found!',
+        text: 'Try again',
+    }) 
 
     if (userLog && x < 3) {
         const { id, name, password } = userLog
-
         let pass = document.getElementById("pass").value;
-
         let passCrorrect = (pass == password) ? true : false;
 
         if (passCrorrect) {
-            alert("Hola " + name + ", " + "bienvenido a ACTIONS");
             window.location = "../views/projects.html";
         } else {
             x++;
-            alert(id + " tu contrasña es incorrecta. Intenta de nuevo");
+            Swal.fire({
+                icon: 'error',
+                title: 'Incorrect password, try again!',
+                text: 'You have 3 chances',
+            })
         }
-        x === 3 && alert("Su cuenta ha sido bloqueada");
-        // if (x === 3) {
-        //     alert("Su cuenta ha sido bloqueada");
-        // }
+        x === 3 &&
+        Swal.fire({
+            icon: 'error',
+            title: 'User blocked!',
+            text: 'Contact us on discord',
+        }) 
     }
 }
 

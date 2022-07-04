@@ -8,6 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })
 
+// Saludo a usuario logeado (ver como conectar los dos js entre ellos)
+
+Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: 'Welcome to Actions',
+  showConfirmButton: false,
+  timer: 3000
+});
+
 //Clase de poryectos con funcion constructora
 class Project {
   constructor(project) {
